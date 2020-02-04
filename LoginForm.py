@@ -3,6 +3,7 @@ from tkinter import *
 # Creating Function for login button.
 
 def login():
+    # Creating Login Condition
     pass
 
 
