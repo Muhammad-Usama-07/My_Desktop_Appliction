@@ -55,6 +55,11 @@ class MenuPageClass:
                              relief = "ridge" , command = AddMember.Add_Member )
         add_member.place( x = 450 , y = 85 )
 
+        remove_member = Button( lf1 , text = "Remove a Member" , bg = '#4dff4d' ,
+                                font = ("Times%New%Roman" , 15 , "bold") ,
+                                relief = "ridge" , command = RemoveMember.Remove_Member )
+        remove_member.place( x = 450 , y = 155 )
+
 
 r = Tk()
 
