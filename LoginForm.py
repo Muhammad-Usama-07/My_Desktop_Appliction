@@ -30,6 +30,8 @@ lbl.place( x = 270 , y = 240 )
 
 # Creating input Fields
 
-
+# Variables of password and username.
+passd = StringVar()
+User_name = StringVar()
 
 r.mainloop()
