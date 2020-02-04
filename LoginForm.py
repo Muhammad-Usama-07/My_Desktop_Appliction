@@ -22,7 +22,7 @@ lf1.pack( fill = "both" , expand = TRUE , padx = 20 , pady = 20 )
 # Creating Label in a frame
 
 lbl = Label(lf1 , text = "User Name:")
-
+lbl.place( x = 270 , y = 190 )
 
 
 
