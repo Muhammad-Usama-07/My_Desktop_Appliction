@@ -33,7 +33,8 @@ class MenuPageClass:
 
         # Creating Buttons
 
-        add_books = Button( lf1 , text = "Add a Book")
+        add_books = Button( lf1 , text = "Add a Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
+                        relief = "ridge" )
         add_books.place( x = 65 , y = 85 )
 
         r = Tk()
