@@ -15,7 +15,8 @@ Label( r , text = " Note: Here you can make your study perfect... :) " , bg = "#
 
 # Creating Frame
 
-
+lf1 = LabelFrame( r , text = "Login Your Account" , fg = "red" , bg = '#33ff9e' ,
+                  relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550 )
 
 
 r.mainloop()
