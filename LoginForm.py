@@ -1,5 +1,11 @@
 from tkinter import *
 
+# Creating Function for login button.
+
+def login():
+    pass
+
+
 
 r = Tk()
 # Creating format
