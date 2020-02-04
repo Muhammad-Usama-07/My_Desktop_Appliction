@@ -52,17 +52,17 @@ class MenuPageClass:
         list_issue_books.place( x = 65 , y = 290 )
 
         add_member = Button( lf1 , text = "Add a Member" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                             relief = "ridge" , command = AddMember.Add_Member )
+                             relief = "ridge" )
         add_member.place( x = 450 , y = 85 )
 
         remove_member = Button( lf1 , text = "Remove a Member" , bg = '#4dff4d' ,
                                 font = ("Times%New%Roman" , 15 , "bold") ,
-                                relief = "ridge" , command = RemoveMember.Remove_Member )
+                                relief = "ridge" )
         remove_member.place( x = 450 , y = 155 )
 
         view_stock_button = Button( lf1 , text = "View Stock" , bg = '#4dff4d' ,
                                     font = ("Times%New%Roman" , 15 , "bold") ,
-                                    relief = "ridge" , command = ViewStock.View_Stock )
+                                    relief = "ridge" )
         view_stock_button.place( x = 450 , y = 280 )
 
 
