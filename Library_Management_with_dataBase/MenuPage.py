@@ -60,6 +60,11 @@ class MenuPageClass:
                                 relief = "ridge" , command = RemoveMember.Remove_Member )
         remove_member.place( x = 450 , y = 155 )
 
+        view_stock_button = Button( lf1 , text = "View Stock" , bg = '#4dff4d' ,
+                                    font = ("Times%New%Roman" , 15 , "bold") ,
+                                    relief = "ridge" , command = ViewStock.View_Stock )
+        view_stock_button.place( x = 450 , y = 280 )
+
 
 r = Tk()
 
