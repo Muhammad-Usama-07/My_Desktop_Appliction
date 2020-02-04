@@ -26,6 +26,10 @@ class MenuPageClass:
                                , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
         member_detail.place( x = 450 , y = 30 )
 
+        Stock_detail = Label( lf1 , text = "Stock detail" , fg = "red" , bg = '#33ff9e'
+                              , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
+        Stock_detail.place( x = 450 , y = 220 )
+
 
 r = Tk()
 
