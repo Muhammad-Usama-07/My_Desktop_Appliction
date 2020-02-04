@@ -31,6 +31,9 @@ class MenuPageClass:
         Stock_detail.place( x = 450 , y = 220 )
 
 
+        # Creating Buttons
+
+
 r = Tk()
 
 Menu_class_obj = MenuPageClass(r)
