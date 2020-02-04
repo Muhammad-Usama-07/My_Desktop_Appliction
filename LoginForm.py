@@ -51,7 +51,7 @@ enter_passd.place( x = 400 , y = 240 )
 # Login Button
 
 submit_Button = Button( lf1 , text = "Sign in" bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                        relief = "groove")
+                        relief = "groove", command = login)
 
 submit_Button.place( x = 400 , y = 310 )
 
