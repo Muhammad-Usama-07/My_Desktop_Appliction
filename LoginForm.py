@@ -10,6 +10,8 @@ def login():
         messagebox.showinfo( "Login Successfully" , f"Welcome {User_name.get()}" )
     elif (User_name.get() == "a" and passd.get() != "b"): # When username was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
+    elif (User_name.get() != "a" and passd.get() == "b"): # When password was true
+        messagebox.showerror( "Not Correct" , "Please Enter Correct Username" )
 
 
 r = Tk()
