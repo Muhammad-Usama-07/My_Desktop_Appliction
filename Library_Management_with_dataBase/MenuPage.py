@@ -18,7 +18,8 @@ class MenuPageClass:
                           relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550 )
         lf1.pack( fill = "both" , expand = True , padx = 20 , pady = 20 )
 
-        Books_detail = Label( lf1 , text = "Books detail")
+        Books_detail = Label( lf1 , text = "Books detail" , fg = "red" , bg = '#33ff9e'
+                          , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
         Books_detail.place( x = 60 , y = 30 )
 
 
