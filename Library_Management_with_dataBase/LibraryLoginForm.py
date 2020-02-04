@@ -3,7 +3,8 @@
 
 from tkinter import *
 from tkinter import messagebox
-from Library_Management_with_dataBase import MenuPage
+from PIL import ImageTk
+import MenuPage
 
 # Creating Function for login button.
 def login():
@@ -28,7 +29,6 @@ r.geometry( "900x600+300+50" )  # (width X hight + from_right + from_left)) # as
 # minimum and maximum size of window.
 r.minsize( 400 , 200 )
 r.maxsize( 1100 , 700 )
-r.iconbitmap( r'model_icon.ico' ) #
 Label( r , text = " Note: Here you can make your study perfect... :) " , bg = "#66bd6d" , relief = "solid" ,
        anchor = "w" , height = 2 , font = "Times%New%Roman 11 bold italic" ).pack( side = TOP , fill = X ) # Creating a top highlight lable
 
@@ -68,4 +68,7 @@ submit_Button = Button( lf1 , text = "Sign in", bg = '#4dff4d' , font = ("Times%
 
 submit_Button.place( x = 400 , y = 310 )
 
+
+Menu_class_obj = MenuPage.MenuPageClass()
+Menu_class_obj.MenuFunc(r)
 r.mainloop()

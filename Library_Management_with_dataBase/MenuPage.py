@@ -2,8 +2,7 @@ from tkinter import *
 
 
 class MenuPageClass:
-    def __init__(self, root):
-
+    def MenuFunc(self,root):
         self.root = root
         root.title( 'Module' )  # title
         root.configure( bg = '#bcdebb' )
@@ -67,6 +66,6 @@ class MenuPageClass:
 
 
 r = Tk()
-
-Menu_class_obj = MenuPageClass(r)
+Menu_class_obj = MenuPageClass()
+Menu_class_obj.MenuFunc(r)
 r.mainloop()
