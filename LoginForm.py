@@ -4,7 +4,8 @@ from tkinter import *
 
 def login():
     # Creating Login Condition
-    pass
+    if (User_name.get() == "" and passd.get() == ""):
+        messagebox.showerror( "Alert" , "Please Enter Username \n and Password" ) # First Condition (Checking weather the fields are empty)
 
 
 
