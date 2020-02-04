@@ -12,4 +12,10 @@ r.maxsize( 1100 , 700 )
 r.iconbitmap( r'model_icon.ico' ) #
 Label( r , text = " Note: Here you can make your study perfect... :) " , bg = "#66bd6d" , relief = "solid" ,
        anchor = "w" , height = 2 , font = "Times%New%Roman 11 bold italic" ).pack( side = TOP , fill = X ) # Creating a top highlight lable
+
+# Creating Frame
+
+
+
+
 r.mainloop()
