@@ -42,6 +42,10 @@ class MenuPageClass:
                                relief = "ridge" )
         remove_books.place( x = 65 , y = 155 )
 
+        issue_books = Button( lf1 , text = "Issue a Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
+                              relief = "ridge"  )
+        issue_books.place( x = 65 , y = 220 )
+
 r = Tk()
 
 Menu_class_obj = MenuPageClass(r)
