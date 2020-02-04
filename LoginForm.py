@@ -8,6 +8,8 @@ def login():
         messagebox.showerror( "Alert" , "Please Enter Username \n and Password" ) # First Condition (Checking weather the fields are empty)
     elif (User_name.get() == "a" and passd.get() == "b"):  # When Both are true
         messagebox.showinfo( "Login Successfully" , f"Welcome {User_name.get()}" )
+    elif (User_name.get() == "a" and passd.get() != "b"): # When username was true
+        messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
 
 
 r = Tk()
