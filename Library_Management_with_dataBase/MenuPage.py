@@ -51,6 +51,10 @@ class MenuPageClass:
                                    relief = "ridge"  )
         list_issue_books.place( x = 65 , y = 290 )
 
+        add_member = Button( lf1 , text = "Add a Member" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
+                             relief = "ridge" , command = AddMember.Add_Member )
+        add_member.place( x = 450 , y = 85 )
+
 
 r = Tk()
 
