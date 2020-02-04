@@ -37,7 +37,12 @@ class MenuPageClass:
                         relief = "ridge" )
         add_books.place( x = 65 , y = 85 )
 
-        r = Tk()
+        remove_books = Button( lf1 , text = "Remove a Book" , bg = '#4dff4d' ,
+                               font = ("Times%New%Roman" , 15 , "bold") ,
+                               relief = "ridge" )
+        remove_books.place( x = 65 , y = 155 )
+
+r = Tk()
 
 Menu_class_obj = MenuPageClass(r)
 r.mainloop()
