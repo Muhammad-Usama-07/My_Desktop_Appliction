@@ -9,5 +9,5 @@ r.geometry( "900x600+300+50" )  # (width X hight + from_right + from_left)) # as
 # minimum and maximum size of window.
 r.minsize( 400 , 200 )
 r.maxsize( 1100 , 700 )
-
+r.iconbitmap( r'model_icon.ico' ) # assigning icon
 r.mainloop()
