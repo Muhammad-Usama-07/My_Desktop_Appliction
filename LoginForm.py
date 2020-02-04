@@ -46,5 +46,6 @@ enter_passd.place( x = 400 , y = 240 )
 
 submit_Button = Button( lf1 , text = "Sign in" )
 
+submit_Button.place( x = 400 , y = 310 )
 
 r.mainloop()
