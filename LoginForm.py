@@ -24,6 +24,7 @@ lf1.pack( fill = "both" , expand = TRUE , padx = 20 , pady = 20 )
 lbl = Label(lf1 , text = "User Name:" , bg = '#33ff9e' , font = ("Times%New%Roman" , 15 , "italic" , "bold") )
 lbl.place( x = 270 , y = 190 )
 
-
+lbl = Label( lf1 , text = "Password:" , bg = '#33ff9e' , font = ("Times%New%Roman" , 15 , "italic" , "bold") )
+lbl.place( x = 270 , y = 240 )
 
 r.mainloop()
