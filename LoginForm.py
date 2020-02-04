@@ -34,4 +34,6 @@ lbl.place( x = 270 , y = 240 )
 passd = StringVar()
 User_name = StringVar()
 
+Login_Name = Entry( lf1 , textvariable = User_name ) # Creating Entry Fields of username.
+
 r.mainloop()
