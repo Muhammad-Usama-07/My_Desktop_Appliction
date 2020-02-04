@@ -12,6 +12,8 @@ def login():
         messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
     elif (User_name.get() != "a" and passd.get() == "b"): # When password was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Username" )
+    else:
+        messagebox.showerror( "Alter" , "Enter Correct Username and password" )
 
 
 r = Tk()
