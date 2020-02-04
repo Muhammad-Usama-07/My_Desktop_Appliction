@@ -22,6 +22,10 @@ class MenuPageClass:
                           , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
         Books_detail.place( x = 60 , y = 30 )
 
+        member_detail = Label( lf1 , text = "Members detail" , fg = "red" , bg = '#33ff9e'
+                               , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
+        member_detail.place( x = 450 , y = 30 )
+
 
 r = Tk()
 
