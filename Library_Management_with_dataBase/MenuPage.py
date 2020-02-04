@@ -33,8 +33,10 @@ class MenuPageClass:
 
         # Creating Buttons
 
+        add_books = Button( lf1 , text = "Add a Book")
+        add_books.place( x = 65 , y = 85 )
 
-r = Tk()
+        r = Tk()
 
 Menu_class_obj = MenuPageClass(r)
 r.mainloop()
