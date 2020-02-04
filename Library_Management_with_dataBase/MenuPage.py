@@ -19,7 +19,7 @@ class MenuPageClass:
         lf1.pack( fill = "both" , expand = True , padx = 20 , pady = 20 )
 
         Books_detail = Label( lf1 , text = "Books detail")
-
+        Books_detail.place( x = 60 , y = 30 )
 
 
 r = Tk()
