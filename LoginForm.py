@@ -41,7 +41,7 @@ passd = StringVar()
 User_name = StringVar()
 
 Login_Name = Entry( lf1 , textvariable = User_name , width = 25 , relief = "solid" ,
-                    font = ("Times%New%Roman" , 15 , "bold") ) ) # Creating Entry Field of username.
+                    font = ("Times%New%Roman" , 15 , "bold") ) # Creating Entry Field of username.
 Login_Name.place( x = 400 , y = 190 )
 
 enter_passd = Entry( lf1 , textvariable = passd , show = "*", width = 25 , relief = "solid" ,
@@ -50,7 +50,7 @@ enter_passd.place( x = 400 , y = 240 )
 
 # Login Button
 
-submit_Button = Button( lf1 , text = "Sign in" bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
+submit_Button = Button( lf1 , text = "Sign in", bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
                         relief = "groove", command = login)
 
 submit_Button.place( x = 400 , y = 310 )
