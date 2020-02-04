@@ -6,7 +6,8 @@ def login():
     # Creating Login Condition
     if (User_name.get() == "" and passd.get() == ""):
         messagebox.showerror( "Alert" , "Please Enter Username \n and Password" ) # First Condition (Checking weather the fields are empty)
-
+    elif (User_name.get() == "a" and passd.get() == "b"):  # When Both are true
+        messagebox.showinfo( "Login Successfully" , f"Welcome {User_name.get()}" )
 
 
 r = Tk()
