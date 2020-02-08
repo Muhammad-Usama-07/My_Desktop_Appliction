@@ -22,11 +22,11 @@ class AddBookClass:
 
         new_book_name_Label = Label( lf , text = "Enter Book Name: " , bg = "#33ff9e" ,
                                      anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        new_book_name_Label.place( x = 30 , y = 90 )
+        new_book_name_Label.place( x = 90 , y = 80 )
 
         Book_auther_Label = Label( lf , text = "Enter Book Auther: " , bg = "#33ff9e" ,
                                    anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        Book_auther_Label.place( x = 30 , y = 150 )
+        Book_auther_Label.place( x = 90 , y = 150 )
 
         # Entries
 
@@ -38,12 +38,12 @@ class AddBookClass:
         new_book_name = StringVar()
         new_book_name_entry = Entry( lf , textvariable = new_book_name , width = 25 , relief = "solid" ,
                                      font = ("Times%New%Roman" , 15 , "bold") )
-        new_book_name_entry.place( x = 215 , y = 100 )
+        new_book_name_entry.place( x = 300 , y = 90 )
 
         new_book_auther_name = StringVar()
         new_book_auther_entry = Entry( lf , textvariable = new_book_auther_name , width = 25 , relief = "solid" ,
                                        font = ("Times%New%Roman" , 15 , "bold") )
-        new_book_auther_entry.place( x = 215 , y = 160 )
+        new_book_auther_entry.place( x = 300 , y = 160 )
 
         next_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold")
                               , command = self.root.destroy )
