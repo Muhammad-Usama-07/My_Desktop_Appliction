@@ -16,8 +16,8 @@ def login():
     if (User_name.get() == "" and passd.get() == ""):
         messagebox.showerror( "Alert" ,"Please Enter Username \n and Password" )  # First Condition (Checking weather the fields are empty)
     elif (User_name.get() == "a" and passd.get() == "b"):  # When Both are true
-        messagebox.showinfo( "Login Successfully" , f"Welcome {User_name.get()}" )
         d.MenuFunc()
+        r.destroy()
     elif (User_name.get() == "a" and passd.get() != "b"):  # When username was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
     elif (User_name.get() != "a" and passd.get() == "b"):  # When password was true

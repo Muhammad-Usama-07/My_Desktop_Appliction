@@ -1,5 +1,5 @@
 from tkinter import *
-class AddBookClass:
+class AddBookClass():
     def __init__(self, root):
         self.root = root
     def AddBookFunc(self):
@@ -22,13 +22,22 @@ class AddBookClass:
 
         new_book_name_Label = Label( lf , text = "Enter Book Name: " , bg = "#33ff9e" ,
                                      anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        new_book_name_Label.place( x = 90 , y = 80 )
+        new_book_name_Label.place( x = 115 , y = 80 )
 
         Book_auther_Label = Label( lf , text = "Enter Book Auther: " , bg = "#33ff9e" ,
                                    anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        Book_auther_Label.place( x = 90 , y = 150 )
+        Book_auther_Label.place( x = 105 , y = 140 )
+
+        Book_edition_Label = Label( lf , text = "Enter edition of Book: " , bg = "#33ff9e" ,
+                                   anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
+        Book_edition_Label.place( x = 80 , y = 200 )
+
+        Book_edition_Label = Label( lf , text = "Enter quantity of Book: " , bg = "#33ff9e" ,
+                                    anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
+        Book_edition_Label.place( x = 70 , y = 260 )
 
         # Entries
+        #********
 
         new_ISBN_number = IntVar()
         new_ISBN_number_entry = Entry( lf , textvariable = new_ISBN_number , width = 25 , relief = "solid" ,
@@ -43,14 +52,25 @@ class AddBookClass:
         new_book_auther_name = StringVar()
         new_book_auther_entry = Entry( lf , textvariable = new_book_auther_name , width = 25 , relief = "solid" ,
                                        font = ("Times%New%Roman" , 15 , "bold") )
-        new_book_auther_entry.place( x = 300 , y = 160 )
+        new_book_auther_entry.place( x = 300 , y = 150 )
 
-        next_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold")
+        Book_edition_number = IntVar()
+        Book_edition_number_entry = Entry( lf , textvariable = Book_edition_number , width = 25 , relief = "solid" ,
+                                           font = ("Times%New%Roman" , 15 , "bold") )
+        Book_edition_number_entry.place( x = 300 , y = 210 )
+
+        Book_equantity = IntVar()
+        Book_equantity_entry = Entry( lf , textvariable = Book_equantity , width = 25 , relief = "solid" ,
+                                           font = ("Times%New%Roman" , 15 , "bold") )
+        Book_equantity_entry.place( x = 300 , y = 270 )
+
+        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold")
                               , command = self.root.destroy )
-        next_button.place( x = 750 , y = 450 )
+        Back_button.place( x = 750 , y = 450 )
 
 
-'''r = Tk()
+
+r = Tk()
 obj = AddBookClass(r)
 obj.AddBookFunc()
-r.mainloop()'''
+r.mainloop()

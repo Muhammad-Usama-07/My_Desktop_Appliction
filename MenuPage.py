@@ -2,6 +2,7 @@
 
 from tkinter import *
 from Library_Management_project import AddBook
+
 class MenuPageClass(AddBook.AddBookClass):
     def __init__(self, root):
         self.root = root
@@ -69,8 +70,8 @@ class MenuPageClass(AddBook.AddBookClass):
                                     relief = "ridge" )
         view_stock_button.place( x = 450 , y = 280 )
 
-r = Tk()
+'''r = Tk()
 
 onj = MenuPageClass(r)
 onj.MenuFunc()
-r.mainloop()
+r.mainloop()'''
