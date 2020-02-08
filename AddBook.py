@@ -30,7 +30,7 @@ class AddBookClass:
 
         # Entries
 
-        new_ISBN_number = StringVar()
+        new_ISBN_number = IntVar()
         new_ISBN_number_entry = Entry( lf , textvariable = new_ISBN_number , width = 25 , relief = "solid" ,
                                      font = ("Times%New%Roman" , 15 , "bold") )
         new_ISBN_number_entry.place( x = 300 , y = 30 )
@@ -50,7 +50,7 @@ class AddBookClass:
         next_button.place( x = 750 , y = 450 )
 
 
-r = Tk()
+'''r = Tk()
 obj = AddBookClass(r)
 obj.AddBookFunc()
-r.mainloop()
+r.mainloop()'''
