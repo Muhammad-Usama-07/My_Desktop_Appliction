@@ -1,5 +1,5 @@
 #**********************************  LIBRARY MANAGEMENT SYSTEM  **************************
-
+#
 
 from tkinter import *
 from tkinter import messagebox
@@ -7,8 +7,6 @@ from PIL import ImageTk
 from Library_Management_with_dataBase import MenuPage
 
 r = Tk()
-
-
 # Creating Function for login button.
 def login():
     # Creating Login Condition
