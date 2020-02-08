@@ -4,24 +4,26 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk
-import MenuPage
+from Library_Management_with_dataBase import MenuPage
+
+r = Tk()
+
 
 # Creating Function for login button.
 def login():
     # Creating Login Condition
     if (User_name.get() == "" and passd.get() == ""):
-        messagebox.showerror( "Alert" , "Please Enter Username \n and Password" ) # First Condition (Checking weather the fields are empty)
+        messagebox.showerror( "Alert" ,"Please Enter Username \n and Password" )  # First Condition (Checking weather the fields are empty)
     elif (User_name.get() == "a" and passd.get() == "b"):  # When Both are true
         messagebox.showinfo( "Login Successfully" , f"Welcome {User_name.get()}" )
-    elif (User_name.get() == "a" and passd.get() != "b"): # When username was true
+    elif (User_name.get() == "a" and passd.get() != "b"):  # When username was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
-    elif (User_name.get() != "a" and passd.get() == "b"): # When password was true
+    elif (User_name.get() != "a" and passd.get() == "b"):  # When password was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Username" )
     else:
         messagebox.showerror( "Alter" , "Enter Correct Username and password" )
 
 
-r = Tk()
 # Creating format
 r.title( 'Module' )  # title
 r.configure( bg = '#bcdebb' ) # Changing backgroud colour.
@@ -69,6 +71,5 @@ submit_Button = Button( lf1 , text = "Sign in", bg = '#4dff4d' , font = ("Times%
 submit_Button.place( x = 400 , y = 310 )
 
 
-Menu_class_obj = MenuPage.MenuPageClass()
-Menu_class_obj.MenuFunc(r)
+
 r.mainloop()
