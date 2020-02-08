@@ -22,9 +22,10 @@ class AddBookClass():
         def BookAdded():
             if (new_book_name.get() == "" and new_book_auther_name.get() == "" and
             new_ISBN_number.get() == 0):
+                messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
+
                 if():
                     pass
-                messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
             else:
                 messagebox.showerror( "Alter" , "Enter Correct Username and password" )
 
@@ -77,7 +78,7 @@ class AddBookClass():
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Book_equantity_entry.place( x = 300 , y = 270 )
 
-        Add_Book_button = Button( lf , text = "ADD" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold"),relief = "groove"
+        Add_Book_button = Button( lf , text = "Add Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold"),relief = "groove"
                               , command = BookAdded )
         Add_Book_button.place( x = 120 , y = 350)
 
