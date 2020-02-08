@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 class AddBookClass():
     def __init__(self, root):
         self.root = root
@@ -14,6 +15,18 @@ class AddBookClass():
         lf = LabelFrame( self.root , text = "Fill the Details" , fg = "red" , bg = '#33ff9e' ,
                          relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550 )
         lf.pack( fill = "both" , expand = True , padx = 20 , pady = 20 )
+
+        # Functions
+        #***********
+
+        def BookAdded():
+            if (new_book_name.get() == "" and new_book_auther_name.get() == "" and
+            new_ISBN_number.get() == 0):
+                if():
+                    pass
+                messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
+            else:
+                messagebox.showerror( "Alter" , "Enter Correct Username and password" )
 
         # Labels
         new_ISBN_number_Label = Label( lf , text = "Write new ISBN of the book:" , bg = "#33ff9e" ,
@@ -64,9 +77,13 @@ class AddBookClass():
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Book_equantity_entry.place( x = 300 , y = 270 )
 
-        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold")
+        Add_Book_button = Button( lf , text = "ADD" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold"),relief = "groove"
+                              , command = BookAdded )
+        Add_Book_button.place( x = 120 , y = 350)
+
+        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold"), relief = "groove"
                               , command = self.root.destroy )
-        Back_button.place( x = 750 , y = 450 )
+        Back_button.place( x = 710 , y = 350 )
 
 
 
