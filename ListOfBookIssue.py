@@ -27,15 +27,15 @@ class ListBookIssueClass():
           ********'''
         '''Button
            ******'''
-        List_All_books_button = Button( lf , text = "List of All books" , bg = '#4dff4d' ,
+        List_All_books_button = Button( lf , text = "All books" , bg = '#4dff4d' ,
                                      font = ("Times%New%Roman" , 17 , "bold") ,
                                      relief = "groove")
-        List_All_books_button.place( x = 150 , y = 30)
+        List_All_books_button.place( x = 100 , y = 60)
 
-        Search_for_book_button = Button( lf , text = "Search for a book" , bg = '#4dff4d' ,
+        Search_for_book_button = Button( lf , text = "Search" , bg = '#4dff4d' ,
                                         font = ("Times%New%Roman" , 17 , "bold") ,
                                         relief = "groove" )
-        Search_for_book_button.place( x = 500 , y = 30 )
+        Search_for_book_button.place( x = 700 , y = 60 )
 
         Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
