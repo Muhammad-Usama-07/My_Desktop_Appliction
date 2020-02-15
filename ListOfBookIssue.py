@@ -12,37 +12,42 @@ class ListBookIssueClass():
                relief = "solid" ,
                anchor = "w" , height = 2 , font = "Times%New%Roman 11 bold italic" ).pack()
 
-        lf = LabelFrame( self.root , text = "Enter your Choice" , fg = "red" , bg = '#33ff9e' ,
-                         relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550 )
-        lf.pack( fill = "both" , expand = True , padx = 20 , pady = 20 )
+        '''Frames
+           ******'''
+
+        lf1 = LabelFrame( self.root , text = "List of all Books" , fg = "red" , bg = '#33ff9e' ,
+                         relief = "solid" , font = "Times%New%Roman 16 bold" )
+        lf1.place(x = 10, y = 100, height = 150, width = 435)
+
+        lf2 = LabelFrame( self.root , text = "Search for Specific Books" , fg = "red" , bg = '#33ff9e' ,
+                          relief = "solid" , font = "Times%New%Roman 16 bold" )
+        lf2.place( x = 445 , y = 100 , height = 150 , width = 450 )
+
 
         '''Functions
           ***********'''
 
 
-        '''Labels'''
-
-
         '''Entries
           ********'''
         Book_name = StringVar()
-        Book_name_entry = Entry( lf , textvariable = Book_name , width = 25 , relief = "solid" ,
+        Book_name_entry = Entry( lf2 , textvariable = Book_name , width = 25 , relief = "solid" ,
                                        font = ("Times%New%Roman" , 15 , "bold") )
-        Book_name_entry.place( x = 400 , y = 70 )
+        Book_name_entry.place( x = 40 , y = 40 )
 
         '''Button
            ******'''
-        List_All_books_button = Button( lf , text = "All books" , bg = '#4dff4d' ,
+        List_All_books_button = Button( lf1 , text = "All books" , bg = '#4dff4d' ,
                                      font = ("Times%New%Roman" , 17 , "bold") ,
                                      relief = "groove")
-        List_All_books_button.place( x = 100 , y = 60)
+        List_All_books_button.place( x = 280 , y = 30)
 
-        Search_for_book_button = Button( lf , text = "Search" , bg = '#4dff4d' ,
+        Search_for_book_button = Button( lf2 , text = "Search" , bg = '#4dff4d' ,
                                         font = ("Times%New%Roman" , 17 , "bold") ,
                                         relief = "groove" )
-        Search_for_book_button.place( x = 700 , y = 60 )
+        Search_for_book_button.place( x = 340 , y = 30 )
 
-        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
+        Back_button = Button( self.root , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
                               , command = self.root.destroy )
         Back_button.place( x = 710 , y = 400 )
