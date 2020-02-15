@@ -8,12 +8,12 @@ from Library_Management_project import MenuPage
 
 # Creating Function for login button.
 def login():
-    d = MenuPage.MenuPageClass()
     # Creating Login Condition
     if (User_name.get() == "" and passd.get() == ""):
         messagebox.showerror( "Alert" ,"Please Enter Username \n and Password" )  # First Condition (Checking weather the fields are empty)
     elif (User_name.get() == "a" and passd.get() == "b"):  # When Both are true
-        d.MenuFunc()
+        MenuPage.MenuPageClass()
+        exit_func()
     elif (User_name.get() == "a" and passd.get() != "b"):  # When username was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
     elif (User_name.get() != "a" and passd.get() == "b"):  # When password was true
@@ -21,8 +21,11 @@ def login():
     else:
         messagebox.showerror( "Alter" , "Enter Correct Username and password" )
 
+def exit_func():
+    r.destroy()
 
 r = Tk()
+
 
 # Creating format
 r.title( 'Module' )  # title
@@ -67,8 +70,13 @@ enter_passd.place( x = 400 , y = 240 )
 
 submit_Button = Button( lf1 , text = "Sign in", bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
                         relief = "groove", command = login)
-
 submit_Button.place( x = 400 , y = 310 )
-#submit_Button.bind('<Enter>',login)
+#submit_Button.bind('<Enter>', login)
+
+Leave_Button = Button( lf1 , text = "Leave it", bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
+                        relief = "groove", command = exit_func)
+Leave_Button.place( x = 560 , y = 310 )
+
+#Leave_Button.bind('<Enter>', exit_func)
 
 r.mainloop()
