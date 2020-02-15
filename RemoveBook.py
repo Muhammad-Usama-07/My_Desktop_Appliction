@@ -20,14 +20,7 @@ class RemoveBookClass():
         # ***********
 
         def BookRemoved():
-            if (new_book_name.get() == "" and new_book_auther_name.get() == "" and
-                    new_ISBN_number.get() == 0):
-                messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
-
-                if ():
-                    pass
-            else:
-                messagebox.showerror( "Alter" , "Enter Correct Username and password" )
+            pass
 
         Remove_Book_button = Button( lf , text = "Add Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold") ,
                                   relief = "groove"
@@ -41,7 +34,6 @@ class RemoveBookClass():
 
     def RemoveBookFunc(self):
         self.root.mainloop()
-
 
 
 
