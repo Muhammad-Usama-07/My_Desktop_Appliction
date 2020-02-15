@@ -3,6 +3,7 @@
 from tkinter import *
 from Library_Management_project import AddBook
 from Library_Management_project import AddMember
+from Library_Management_project import RemoveBook
 
 class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
     def __init__(self):
@@ -39,6 +40,10 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
                             relief = "ridge", command = AddBook.AddBookClass)
         add_books.place( x = 65 , y = 85 )
 
+        add_member = Button( lf1 , text = "Add a Member" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
+                             relief = "ridge" , command = AddMember.AddMemberClass )
+        add_member.place( x = 450 , y = 85 )
+
         remove_books = Button( lf1 , text = "Remove a Book" , bg = '#4dff4d' ,
                                font = ("Times%New%Roman" , 15 , "bold") ,
                                relief = "ridge" )
@@ -52,10 +57,6 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
                                    font = ("Times%New%Roman" , 15 , "bold") ,
                                    relief = "ridge" )
         list_issue_books.place( x = 65 , y = 290 )
-
-        add_member = Button( lf1 , text = "Add a Member" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                             relief = "ridge", command = AddMember.AddMemberClass)
-        add_member.place( x = 450 , y = 85 )
 
         remove_member = Button( lf1 , text = "Remove a Member" , bg = '#4dff4d' ,
                                 font = ("Times%New%Roman" , 15 , "bold") ,
