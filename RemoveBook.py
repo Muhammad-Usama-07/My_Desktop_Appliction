@@ -22,6 +22,23 @@ class RemoveBookClass():
         def BookRemoved():
             pass
 
+        '''Labels
+          ********'''
+        Remove_book_name_Label = Label( lf , text = "Enter name of Book:" , bg = "#33ff9e" ,
+                                        anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
+        Remove_book_name_Label.place( x = 20 , y = 20 )
+
+
+        '''Entries
+           ********'''
+        Remove_Book_var = StringVar()
+        Remove_Book_entry = Entry( lf , textvariable = Remove_Book_var , width = 25 , relief = "solid" ,
+                                           font = ("Times%New%Roman" , 15 , "bold") )
+        Remove_Book_entry.place( x = 220 , y = 30 )
+
+        '''Buttons
+           ********'''
+
         Remove_Book_button = Button( lf , text = "Remove this Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                                   relief = "groove"
                                   , command = BookRemoved )
