@@ -39,7 +39,7 @@ class RemoveBookClass():
         #Creating ScrollBar
 
         scroll_Bar = Scrollbar(lf)
-        scroll_Bar.pack( side = RIGHT , fill = Y )
+        scroll_Bar.place(x = 495, y = 80)
 
         Book_Detail = Text(lf, width = 59, height = 15, yscrollcommand =  scroll_Bar.set)
         Book_Detail.place(x = 20, y = 80)
