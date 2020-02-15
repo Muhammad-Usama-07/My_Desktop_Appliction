@@ -36,8 +36,15 @@ class RemoveBookClass():
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Remove_Book_entry.place( x = 220 , y = 30 )
 
+        #Creating ScrollBar
+
+        Scroll_Bar = Scrollbar(lf)
+        Scroll_Bar.pack(fill = Y)
+
         Book_Detail = Text(lf, width = 59, height = 15,  relief = "solid")
         Book_Detail.place(x = 20, y = 80)
+
+        
 
         '''Buttons
            ********'''
