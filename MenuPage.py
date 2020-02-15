@@ -4,6 +4,7 @@ from tkinter import *
 from Library_Management_project import AddBook
 from Library_Management_project import AddMember
 from Library_Management_project import RemoveBook
+from Library_Management_project import RemoveMember
 
 class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
     def __init__(self):
@@ -60,7 +61,7 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
 
         remove_member = Button( lf1 , text = "Remove a Member" , bg = '#4dff4d' ,
                                 font = ("Times%New%Roman" , 15 , "bold") ,
-                                relief = "ridge" )
+                                relief = "ridge", command = RemoveMember.RemoveMemberClass)
         remove_member.place( x = 450 , y = 155 )
 
         view_stock_button = Button( lf1 , text = "View Stock" , bg = '#4dff4d' ,
@@ -77,8 +78,8 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
         self.root.mainloop()
 
 
-r = Tk()
+'''r = Tk()
 
 onj = MenuPageClass()
 
-r.mainloop()
+r.mainloop()'''
