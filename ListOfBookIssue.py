@@ -58,10 +58,18 @@ class ListBookIssueClass():
         Text Field
         **********
         '''
-        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" )
+
+        '''
+        Scroll Bar
+        *********
+        '''
+        scroll_Bar = Scrollbar( lf3 , width = 25 , relief = "solid" )
+        scroll_Bar.place( x = 654 , y = 10 , height = 340 )
+
+        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" ,yscrollcommand =  scroll_Bar.set)
         Book_Details.place( x = 10 , y = 10 )
 
-
+        scroll_Bar.config( command = Book_Details.yview )
 
     def ListBookIssueFunc(self):
         self.root.mainloop()
