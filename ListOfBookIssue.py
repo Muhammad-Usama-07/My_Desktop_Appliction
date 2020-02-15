@@ -25,6 +25,11 @@ class ListBookIssueClass():
 
         '''Entries
           ********'''
+        Book_name = StringVar()
+        Book_name_entry = Entry( lf , textvariable = Book_name , width = 25 , relief = "solid" ,
+                                       font = ("Times%New%Roman" , 15 , "bold") )
+        Book_name_entry.place( x = 400 , y = 70 )
+
         '''Button
            ******'''
         List_All_books_button = Button( lf , text = "All books" , bg = '#4dff4d' ,
