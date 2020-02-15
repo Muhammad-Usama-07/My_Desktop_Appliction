@@ -17,14 +17,14 @@ class ListBookIssueClass():
 
         lf1 = LabelFrame( self.root , text = "List of all Books" , fg = "red" , bg = '#33ff9e' ,
                          relief = "solid" , font = "Times%New%Roman 16 bold" )
-        lf1.place(x = 5, y = 100, height = 150, width = 440)
+        lf1.place(x = 5, y = 60, height = 150, width = 440)
 
         lf2 = LabelFrame( self.root , text = "Search for Specific Books" , fg = "red" , bg = '#33ff9e' ,
                           relief = "solid" , font = "Times%New%Roman 16 bold" )
-        lf2.place( x = 445 , y = 100 , height = 150 , width = 450 )
+        lf2.place( x = 445 , y = 60 , height = 150 , width = 450 )
 
         lf3 = Frame( self.root , bg = '#33ff9e' , highlightcolor="black", highlightbackground="black", highlightthickness = 2)
-        lf3.place( x = 5 , y = 250 , height = 340 , width = 890 )
+        lf3.place( x = 5 , y = 210 , height = 380 , width = 890 )
 
         '''Functions
           ***********'''
@@ -52,14 +52,14 @@ class ListBookIssueClass():
         Back_button = Button( lf3 , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
                               , command = self.root.destroy )
-        Back_button.place( x = 770 , y = 250 )
+        Back_button.place( x = 790 , y = 300 )
 
         '''
         Text Field
         **********
         '''
-        Book_Details = Text( lf3 , width = 59 , height = 15 , relief = "solid" )
-        Book_Details.place( x = 20 , y = 80 )
+        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" )
+        Book_Details.place( x = 10 , y = 10 )
 
 
 
