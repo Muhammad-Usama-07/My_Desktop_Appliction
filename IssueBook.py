@@ -27,6 +27,14 @@ class IssueBookClass():
 
         # Labels
 
+        Book_ISBN_Label = Label( lf , text = "Enter isbn of Book: " , bg = "#33ff9e" ,
+                                    anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
+        Book_ISBN_Label.place( x = 80 , y = 200 )
+
+        Member_code_Label = Label( lf , text = "Enter code of member: " , bg = "#33ff9e" ,
+                                     anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
+        Member_code_Label.place( x = 70 , y = 260 )
+
 
         # Entries
         # ********

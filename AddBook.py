@@ -46,9 +46,9 @@ class AddBookClass():
                                     anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
         Book_edition_Label.place( x = 80 , y = 200 )
 
-        Book_edition_Label = Label( lf , text = "Enter quantity of Book: " , bg = "#33ff9e" ,
+        Book_quantity_Label = Label( lf , text = "Enter quantity of Book: " , bg = "#33ff9e" ,
                                     anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        Book_edition_Label.place( x = 70 , y = 260 )
+        Book_quantity_Label.place( x = 70 , y = 260 )
 
         # Entries
         # ********
