@@ -15,11 +15,11 @@ class ListBookIssueClass():
         '''Frames
            ******'''
 
-        lf1 = LabelFrame( self.root , text = "List of all Books" , fg = "red" , bg = '#33ff9e' ,
+        lf1 = LabelFrame( self.root , text = "List of all Books issued" , fg = "red" , bg = '#33ff9e' ,
                          relief = "solid" , font = "Times%New%Roman 16 bold" )
         lf1.place(x = 5, y = 60, height = 150, width = 440)
 
-        lf2 = LabelFrame( self.root , text = "Search for Specific Books" , fg = "red" , bg = '#33ff9e' ,
+        lf2 = LabelFrame( self.root , text = "Search for issued Books" , fg = "red" , bg = '#33ff9e' ,
                           relief = "solid" , font = "Times%New%Roman 16 bold" )
         lf2.place( x = 445 , y = 60 , height = 150 , width = 450 )
 
