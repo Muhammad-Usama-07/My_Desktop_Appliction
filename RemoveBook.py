@@ -36,6 +36,9 @@ class RemoveBookClass():
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Remove_Book_entry.place( x = 220 , y = 30 )
 
+        Book_Detail = Text(lf, width = 59, height = 15,  relief = "solid")
+        Book_Detail.place(x = 20, y = 80)
+
         '''Buttons
            ********'''
 
