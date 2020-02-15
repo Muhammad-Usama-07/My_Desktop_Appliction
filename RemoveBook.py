@@ -3,7 +3,7 @@ from tkinter import messagebox
 class RemoveBookClass():
     def __init__(self):
         self.root = Tk()
-        self.root.title( 'Add Book' )
+        self.root.title( 'Remove Book' )
         self.root.geometry( "900x600+300+50" )
         self.root.minsize( 400 , 200 )
         self.root.maxsize( 1100 , 700 )
@@ -63,7 +63,7 @@ class RemoveBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 RemoveBookClass()
 
-r.mainloop()
+r.mainloop()'''

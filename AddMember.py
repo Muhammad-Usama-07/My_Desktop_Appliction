@@ -3,7 +3,7 @@ from tkinter import messagebox
 class AddMemberClass():
     def __init__(self):
         self.root = Tk()
-        self.root.title( 'Member' )
+        self.root.title( 'Add Member' )
         self.root.geometry( "900x600+300+50" )
         self.root.minsize( 400 , 200 )
         self.root.maxsize( 1100 , 700 )

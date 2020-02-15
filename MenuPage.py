@@ -46,7 +46,7 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
 
         remove_books = Button( lf1 , text = "Remove a Book" , bg = '#4dff4d' ,
                                font = ("Times%New%Roman" , 15 , "bold") ,
-                               relief = "ridge" )
+                               relief = "ridge" , command = RemoveBook.RemoveBookClass)
         remove_books.place( x = 65 , y = 155 )
 
         issue_books = Button( lf1 , text = "Issue a Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
@@ -77,8 +77,8 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
         self.root.mainloop()
 
 
-'''r = Tk()
+r = Tk()
 
 onj = MenuPageClass()
-onj.MenuFunc()
-r.mainloop()'''
+
+r.mainloop()
