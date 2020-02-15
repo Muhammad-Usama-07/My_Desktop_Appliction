@@ -3,7 +3,7 @@ from tkinter import messagebox
 class ListBookIssueClass():
     def __init__(self):
         self.root = Tk()
-        self.root.title( 'Add Book' )
+        self.root.title( 'List of Book issue' )
         self.root.geometry( "900x600+300+50" )
         self.root.minsize( 400 , 200 )
         self.root.maxsize( 1100 , 700 )
@@ -20,11 +20,28 @@ class ListBookIssueClass():
           ***********'''
 
 
-        # Labels
+        '''Labels'''
 
 
         '''Entries
           ********'''
+        '''Button
+           ******'''
+        List_All_books_button = Button( lf , text = "List of All books" , bg = '#4dff4d' ,
+                                     font = ("Times%New%Roman" , 17 , "bold") ,
+                                     relief = "groove")
+        List_All_books_button.place( x = 150 , y = 30)
+
+        Search_for_book_button = Button( lf , text = "Search for a book" , bg = '#4dff4d' ,
+                                        font = ("Times%New%Roman" , 17 , "bold") ,
+                                        relief = "groove" )
+        Search_for_book_button.place( x = 500 , y = 30 )
+
+        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
+                              relief = "groove"
+                              , command = self.root.destroy )
+        Back_button.place( x = 710 , y = 400 )
+
 
 
     def ListBookIssueFunc(self):
