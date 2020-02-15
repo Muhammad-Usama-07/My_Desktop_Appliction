@@ -23,6 +23,8 @@ class ListBookIssueClass():
                           relief = "solid" , font = "Times%New%Roman 16 bold" )
         lf2.place( x = 445 , y = 100 , height = 150 , width = 450 )
 
+        lf3 = Frame( self.root )
+        lf3.place( x = 10 , y = 250 , height = 150 , width = 450 )
 
         '''Functions
           ***********'''
