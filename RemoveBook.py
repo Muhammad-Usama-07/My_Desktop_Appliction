@@ -22,15 +22,15 @@ class RemoveBookClass():
         def BookRemoved():
             pass
 
-        Remove_Book_button = Button( lf , text = "Add Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold") ,
+        Remove_Book_button = Button( lf , text = "Remove this Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                                   relief = "groove"
                                   , command = BookRemoved )
-        Remove_Book_button.place( x = 120 , y = 350 )
+        Remove_Book_button.place( x = 120 , y = 400 )
 
-        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold") ,
+        Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
                               , command = self.root.destroy )
-        Back_button.place( x = 710 , y = 350 )
+        Back_button.place( x = 710 , y = 400 )
 
     def RemoveBookFunc(self):
         self.root.mainloop()
