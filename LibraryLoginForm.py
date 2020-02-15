@@ -6,18 +6,14 @@ from tkinter import messagebox
 #from PIL import ImageTk
 from Library_Management_project import MenuPage
 
-
-r = Tk()
 # Creating Function for login button.
 def login():
-    d = MenuPage.MenuPageClass( r )
-
+    d = MenuPage.MenuPageClass()
     # Creating Login Condition
     if (User_name.get() == "" and passd.get() == ""):
         messagebox.showerror( "Alert" ,"Please Enter Username \n and Password" )  # First Condition (Checking weather the fields are empty)
     elif (User_name.get() == "a" and passd.get() == "b"):  # When Both are true
         d.MenuFunc()
-        r.destroy()
     elif (User_name.get() == "a" and passd.get() != "b"):  # When username was true
         messagebox.showerror( "Not Correct" , "Please Enter Correct Password" )
     elif (User_name.get() != "a" and passd.get() == "b"):  # When password was true
@@ -25,6 +21,8 @@ def login():
     else:
         messagebox.showerror( "Alter" , "Enter Correct Username and password" )
 
+
+r = Tk()
 
 # Creating format
 r.title( 'Module' )  # title
@@ -71,5 +69,6 @@ submit_Button = Button( lf1 , text = "Sign in", bg = '#4dff4d' , font = ("Times%
                         relief = "groove", command = login)
 
 submit_Button.place( x = 400 , y = 310 )
+#submit_Button.bind('<Enter>',login)
 
 r.mainloop()

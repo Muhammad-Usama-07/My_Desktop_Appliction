@@ -2,13 +2,10 @@
 
 from tkinter import *
 from Library_Management_project import AddBook
+from Library_Management_project import AddMember
 
-class MenuPageClass(AddBook.AddBookClass):
-    def __init__(self, root):
-        self.root = root
-    def MenuFunc(self):
-        AddBook_obj = AddBook.AddBookClass( self.root )
-
+class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
+    def __init__(self):
         self.root = Tk()
         self.root.title( 'Module' )  # title
         self.root.configure( bg = '#bcdebb' )
@@ -24,7 +21,7 @@ class MenuPageClass(AddBook.AddBookClass):
         lf1.pack( fill = "both" , expand = True , padx = 20 , pady = 20 )
 
         Books_detail = Label( lf1 , text = "Books detail" , fg = "red" , bg = '#33ff9e'
-                          , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
+                              , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
         Books_detail.place( x = 60 , y = 30 )
 
         member_detail = Label( lf1 , text = "Members detail" , fg = "red" , bg = '#33ff9e'
@@ -35,11 +32,11 @@ class MenuPageClass(AddBook.AddBookClass):
                               , font = ("Times%New%Roman" , 20 , "bold" , "underline") )
         Stock_detail.place( x = 450 , y = 220 )
 
-
         # Creating Buttons
 
+
         add_books = Button( lf1 , text = "Add a Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                        relief = "ridge", command = AddBook_obj.AddBookFunc )
+                            relief = "ridge", command = AddBook.AddBookClass)
         add_books.place( x = 65 , y = 85 )
 
         remove_books = Button( lf1 , text = "Remove a Book" , bg = '#4dff4d' ,
@@ -48,16 +45,16 @@ class MenuPageClass(AddBook.AddBookClass):
         remove_books.place( x = 65 , y = 155 )
 
         issue_books = Button( lf1 , text = "Issue a Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                              relief = "ridge"  )
+                              relief = "ridge" )
         issue_books.place( x = 65 , y = 220 )
 
         list_issue_books = Button( lf1 , text = "List of Book issue" , bg = '#4dff4d' ,
                                    font = ("Times%New%Roman" , 15 , "bold") ,
-                                   relief = "ridge"  )
+                                   relief = "ridge" )
         list_issue_books.place( x = 65 , y = 290 )
 
         add_member = Button( lf1 , text = "Add a Member" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                             relief = "ridge" )
+                             relief = "ridge", command = AddMember.AddMemberClass)
         add_member.place( x = 450 , y = 85 )
 
         remove_member = Button( lf1 , text = "Remove a Member" , bg = '#4dff4d' ,
@@ -70,8 +67,17 @@ class MenuPageClass(AddBook.AddBookClass):
                                     relief = "ridge" )
         view_stock_button.place( x = 450 , y = 280 )
 
+        Quit_button = Button( lf1 , text = "Quit" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
+                              relief = "groove"
+                              , command = self.root.destroy )
+        Quit_button.place( x = 710 , y = 350 )
+
+    def MenuFunc(self):
+        self.root.mainloop()
+
+
 '''r = Tk()
 
-onj = MenuPageClass(r)
+onj = MenuPageClass()
 onj.MenuFunc()
 r.mainloop()'''
