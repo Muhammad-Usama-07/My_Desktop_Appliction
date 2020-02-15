@@ -36,16 +36,9 @@ class RemoveBookClass():
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Remove_Book_entry.place( x = 220 , y = 30 )
 
-        #Creating another frame
+        #Creating ScrollBar
 
-
-
-        second_frame =  Frame(lf,  width = 70, height = 15)
-        second_frame.pack()
-
-             #Creating ScrollBar
-
-        scroll_Bar = Scrollbar( second_frame )
+        scroll_Bar = Scrollbar(lf)
         scroll_Bar.pack( side = RIGHT , fill = Y )
 
         Book_Detail = Text(lf, width = 59, height = 15, yscrollcommand =  scroll_Bar.set)
