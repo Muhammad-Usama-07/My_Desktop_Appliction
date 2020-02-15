@@ -54,6 +54,13 @@ class ListBookIssueClass():
                               , command = self.root.destroy )
         Back_button.place( x = 770 , y = 250 )
 
+        '''
+        Text Field
+        **********
+        '''
+        Book_Details = Text( lf3 , width = 59 , height = 15 , relief = "solid" )
+        Book_Details.place( x = 20 , y = 80 )
+
 
 
     def ListBookIssueFunc(self):
