@@ -81,7 +81,7 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
         self.root.mainloop()
 
 
-r = Tk()
+'''r = Tk()
 onj = MenuPageClass()
 
-r.mainloop()
+r.mainloop()'''

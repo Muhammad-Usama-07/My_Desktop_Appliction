@@ -3,7 +3,7 @@
 
 from tkinter import *
 from tkinter import messagebox
-#from PIL import ImageTk
+from PIL import ImageTk, Image
 from Library_Management_project import MenuPage
 
 # Creating Function for login button.
@@ -40,16 +40,22 @@ Label( r , text = " Note: Here you can make your study perfect... :) " , bg = "#
 # Creating Frame
 
 lf1 = LabelFrame( r , text = "Login Your Account" , fg = "red" , bg = '#33ff9e' ,
-                  relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550 )
+                  relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550)
 lf1.pack( fill = "both" , expand = TRUE , padx = 20 , pady = 20 )
+
+canv = Canvas(lf1, width=200, height=200, bg='#33ff9e', relief = "solid" )
+canv.place(x = 300, y = 10)
+img = ImageTk.PhotoImage(Image.open("login.png"))
+
+canv.create_image(20, 20, anchor=NW, image=img)
 
 # Creating Label in a frame
 
 lbl = Label(lf1 , text = "User Name:" , bg = '#33ff9e' , font = ("Times%New%Roman" , 15 , "italic" , "bold") )
-lbl.place( x = 270 , y = 190 )
+lbl.place( x = 270 , y = 240 )
 
 lbl = Label( lf1 , text = "Password:" , bg = '#33ff9e' , font = ("Times%New%Roman" , 15 , "italic" , "bold") )
-lbl.place( x = 270 , y = 240 )
+lbl.place( x = 270 , y = 290 )
 
 
 # Creating input Fields
@@ -60,22 +66,22 @@ User_name = StringVar()
 
 Login_Name = Entry( lf1 , textvariable = User_name , width = 25 , relief = "solid" ,
                     font = ("Times%New%Roman" , 15 , "bold") ) # Creating Entry Field of username.
-Login_Name.place( x = 400 , y = 190 )
+Login_Name.place( x = 400 , y = 240 )
 
 enter_passd = Entry( lf1 , textvariable = passd , show = "*", width = 25 , relief = "solid" ,
                      font = ("Times%New%Roman" , 15 , "bold") )
-enter_passd.place( x = 400 , y = 240 )
+enter_passd.place( x = 400 , y = 290 )
 
 # Login Button
 
 submit_Button = Button( lf1 , text = "Sign in", bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
                         relief = "groove", command = login)
-submit_Button.place( x = 400 , y = 310 )
+submit_Button.place( x = 400 , y = 360 )
 #submit_Button.bind('<Enter>', login)
 
 Leave_Button = Button( lf1 , text = "Leave it", bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
                         relief = "groove", command = exit_func)
-Leave_Button.place( x = 560 , y = 310 )
+Leave_Button.place( x = 560 , y = 360 )
 
 #Leave_Button.bind('<Enter>', exit_func)
 
