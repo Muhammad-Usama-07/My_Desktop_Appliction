@@ -7,6 +7,7 @@ from Library_Management_project import RemoveBook
 from Library_Management_project import RemoveMember
 from Library_Management_project import ListOfBookIssue
 from Library_Management_project import ViewStock
+from Library_Management_project import IssueBook
 
 class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
     def __init__(self):
@@ -53,7 +54,7 @@ class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
         remove_books.place( x = 65 , y = 155 )
 
         issue_books = Button( lf1 , text = "Issue a Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 15 , "bold") ,
-                              relief = "ridge" )
+                              relief = "ridge", command = IssueBook.IssueBookClass )
         issue_books.place( x = 65 , y = 220 )
 
         list_issue_books = Button( lf1 , text = "List of Book issue" , bg = '#4dff4d' ,

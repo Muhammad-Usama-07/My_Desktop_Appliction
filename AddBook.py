@@ -95,6 +95,5 @@ class AddBookClass():
 
 
 '''r = Tk()
-obj = AddBookClass(r)
-obj.AddBookFunc()
+obj = AddBookClass()
 r.mainloop()'''
