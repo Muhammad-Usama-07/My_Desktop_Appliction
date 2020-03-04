@@ -85,7 +85,7 @@ class AllBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 
 AllBookClass()
-r.mainloop()
+r.mainloop()'''
