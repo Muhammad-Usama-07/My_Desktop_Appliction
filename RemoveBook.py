@@ -20,7 +20,10 @@ class RemoveBookClass():
         # ***********
 
         def BookRemoved():
-            pass
+            if (Remove_Book_var.get() == 0):
+                messagebox.showerror( "Warning" , "Please Enter ISBN at least" )
+            else:
+                pass
 
         '''Labels
           ********'''
@@ -31,7 +34,7 @@ class RemoveBookClass():
 
         '''Entries
            ********'''
-        Remove_Book_var = StringVar()
+        Remove_Book_var = IntVar()
         Remove_Book_entry = Entry( lf , textvariable = Remove_Book_var , width = 25 , relief = "solid" ,
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Remove_Book_entry.place( x = 220 , y = 30 )
