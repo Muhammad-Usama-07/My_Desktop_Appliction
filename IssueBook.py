@@ -64,6 +64,6 @@ class IssueBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 IssueBookClass()
-r.mainloop()
+r.mainloop()'''
