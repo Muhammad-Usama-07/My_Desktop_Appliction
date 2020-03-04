@@ -66,7 +66,7 @@ class RemoveBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 RemoveBookClass()
 
-r.mainloop()
+r.mainloop()'''
