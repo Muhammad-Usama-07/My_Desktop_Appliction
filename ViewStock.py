@@ -73,7 +73,7 @@ class AllBookClass():
                 Text Field
                 **********
         '''
-        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" , wrap= WORD,yscrollcommand =  scroll_Bar.set)
+        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" , wrap= WORD, selectbackground = "#bcdebb",yscrollcommand =  scroll_Bar.set)
         Book_Details.place( x = 10 , y = 10 )
 
         scroll_Bar.config( command = Book_Details.yview )
