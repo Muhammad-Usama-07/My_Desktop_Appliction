@@ -24,7 +24,7 @@ class RemoveBookClass():
 
         '''Labels
           ********'''
-        Remove_book_name_Label = Label( lf , text = "Enter name of Book:" , bg = "#33ff9e" ,
+        Remove_book_name_Label = Label( lf , text = "Enter ISBN of Book:" , bg = "#33ff9e" ,
                                         anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
         Remove_book_name_Label.place( x = 20 , y = 20 )
 
@@ -63,7 +63,7 @@ class RemoveBookClass():
 
 
 
-'''r = Tk()
+r = Tk()
 RemoveBookClass()
 
-r.mainloop()'''
+r.mainloop()
