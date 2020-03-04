@@ -24,7 +24,7 @@ class AddMemberClass():
                 messagebox.showerror( "Warning" , "Please Enter Name , code, \nand telephone number  at least" )
 
             else:
-                messagebox.showerror( "Alter" , "Enter Correct Username and password" )
+                pass
 
         # Labels
         new_member_name_Label = Label( lf , text = "Enter name of new member:" , bg = "#33ff9e" ,
@@ -91,7 +91,7 @@ class AddMemberClass():
 
 
 
-r = Tk()
+'''r = Tk()
 AddMemberClass()
 
-r.mainloop()
+r.mainloop()'''
