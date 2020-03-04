@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 class AllBookClass():
+
     def __init__(self):
         self.root = Tk()
         self.root.title( 'List of Book issue' )
@@ -29,6 +30,13 @@ class AllBookClass():
         '''Functions
           ***********'''
 
+        def search_for_book():
+            if (Book_name.get() == ""):
+                messagebox.showerror( "Warning" , "Please enter ISBN of the book" )
+            else:
+                pass
+        def All_books():
+            pass
 
         '''Entries
           ********'''
@@ -41,12 +49,12 @@ class AllBookClass():
            ******'''
         List_All_books_button = Button( lf1 , text = "All books" , bg = '#4dff4d' ,
                                      font = ("Times%New%Roman" , 17 , "bold") ,
-                                     relief = "groove")
-        List_All_books_button.place( x = 280 , y = 30)
+                                     relief = "groove", command = All_books)
+        List_All_books_button.place( x = 150 , y = 30)
 
         Search_for_book_button = Button( lf2 , text = "Search" , bg = '#4dff4d' ,
                                         font = ("Times%New%Roman" , 17 , "bold") ,
-                                        relief = "groove" )
+                                        relief = "groove" , command = search_for_book)
         Search_for_book_button.place( x = 340 , y = 30 )
 
         Back_button = Button( lf3 , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
@@ -55,21 +63,21 @@ class AllBookClass():
         Back_button.place( x = 790 , y = 300 )
 
         '''
-        Text Field
-        **********
-        '''
-
-        '''
         Scroll Bar
         *********
         '''
         scroll_Bar = Scrollbar( lf3 , width = 25 , relief = "solid" )
         scroll_Bar.place( x = 654 , y = 10 , height = 340 )
 
+        '''
+                Text Field
+                **********
+        '''
         Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" ,yscrollcommand =  scroll_Bar.set)
         Book_Details.place( x = 10 , y = 10 )
 
         scroll_Bar.config( command = Book_Details.yview )
+
 
     def AllBookFunc(self):
         self.root.mainloop()
@@ -77,7 +85,7 @@ class AllBookClass():
 
 
 
-'''r = Tk()
+r = Tk()
 
 AllBookClass()
-r.mainloop()'''
+r.mainloop()
