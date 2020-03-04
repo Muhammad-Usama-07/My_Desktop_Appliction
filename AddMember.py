@@ -20,10 +20,8 @@ class AddMemberClass():
         # ***********
 
         def MemberAdded():
-            if (new_member_variable.get() == "" and Member_code_Label.get() == 0):
-                messagebox.showerror( "Warning" , "Please Enter Name and code at least" )
-                if ():
-                    pass
+            if (new_member_variable.get() == "" and member_code_variable.get() == 0 and member_telephoneNo_variable.get() == 0):
+                messagebox.showerror( "Warning" , "Please Enter Name , code, \nand telephone number  at least" )
 
             else:
                 messagebox.showerror( "Alter" , "Enter Correct Username and password" )
