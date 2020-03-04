@@ -93,7 +93,7 @@ class AddMemberClass():
 
 
 
-'''r = Tk()
-obj = AddMemberClass(r)
-obj.AddMemberFunc()
-r.mainloop()'''
+r = Tk()
+AddMemberClass()
+
+r.mainloop()
