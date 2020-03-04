@@ -29,11 +29,11 @@ class IssueBookClass():
 
         Book_ISBN_Label = Label( lf , text = "Enter ISBN of Book: " , bg = "#33ff9e" ,
                                     anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        Book_ISBN_Label.place( x = 100 , y = 200 )
+        Book_ISBN_Label.place( x = 100 , y = 100 )
 
         Member_code_Label = Label( lf , text = "Enter code of member: " , bg = "#33ff9e" ,
                                      anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        Member_code_Label.place( x = 70 , y = 260 )
+        Member_code_Label.place( x = 70 , y = 190 )
 
         # Entries
         # ********
@@ -41,12 +41,12 @@ class IssueBookClass():
         Book_ISBN_Label_var = IntVar()
         Book_ISBN_Label_entry = Entry( lf , textvariable = Book_ISBN_Label_var , width = 25 , relief = "solid" ,
                                            font = ("Times%New%Roman" , 15 , "bold") )
-        Book_ISBN_Label_entry.place( x = 300 , y = 210 )
+        Book_ISBN_Label_entry.place( x = 300 , y = 110 )
 
         Member_code_var = IntVar()
         Member_code_entry = Entry( lf , textvariable = Member_code_var , width = 25 , relief = "solid" ,
                                       font = ("Times%New%Roman" , 15 , "bold") )
-        Member_code_entry.place( x = 300 , y = 270 )
+        Member_code_entry.place( x = 300 , y = 200 )
 
         Book_Issued_button = Button( lf , text = "Issue this Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold") ,
                                   relief = "groove"
