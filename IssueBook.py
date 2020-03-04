@@ -20,10 +20,10 @@ class IssueBookClass():
         # ***********
 
         def BookIssued():
-            if ():
-                pass
+            if (Book_ISBN_Label_var.get() == 0 and Member_code_var.get() == 0):
+                messagebox.showerror( "Warning" , "Please Enter ISBN and code of member" )
             else:
-                messagebox.showerror( "Alter" , "Enter Correct Username and password" )
+                pass
 
         # Labels
 
