@@ -28,7 +28,13 @@ class ListBookIssueClass():
 
         '''Functions
           ***********'''
-
+        def search_for_book():
+            if (Book_name.get() == ""):
+                messagebox.showerror( "Warning" , "Please enter ISBN of the book" )
+            else:
+                pass
+        def All_books():
+            pass
 
         '''Entries
           ********'''
@@ -76,7 +82,7 @@ class ListBookIssueClass():
 
 
 
-
+'''
 r = Tk()
 obj = ListBookIssueClass()
-r.mainloop()
+r.mainloop()'''
