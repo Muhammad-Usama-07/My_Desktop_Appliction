@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import messagebox
-from PIL import Image, ImageTk
 class AddBookClass():
     def __init__(self):
         self.root = Tk()

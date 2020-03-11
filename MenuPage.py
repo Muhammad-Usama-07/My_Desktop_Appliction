@@ -1,13 +1,13 @@
 
 
 from tkinter import *
-from Library_Management_project import AddBook
-from Library_Management_project import AddMember
-from Library_Management_project import RemoveBook
-from Library_Management_project import RemoveMember
-from Library_Management_project import ListOfBookIssue
-from Library_Management_project import ViewStock
-from Library_Management_project import IssueBook
+import AddBook
+import AddMember
+import RemoveBook
+import RemoveMember
+import ListOfBookIssue
+import ViewStock
+import IssueBook
 
 class MenuPageClass(AddBook.AddBookClass, AddMember.AddMemberClass):
     def __init__(self):
