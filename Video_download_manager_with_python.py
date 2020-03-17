@@ -32,12 +32,13 @@ class VDM():
 
         '''Quality Menu
            ************'''
-        dict = ["one","two","three","four" ]
-        select_resolution_var = StringVar()
-        select_resolution_var.set(dict[0])
 
-        select_resolution = OptionMenu(lf,select_resolution_var, *dict)
-        select_resolution.config(width = 90,relief="solid",font=("Times%New%Roman", 10))
+        items = ["one","two","three","four" ]
+        select_resolution_var = StringVar()
+        select_resolution_var.set(items[0])
+
+        select_resolution = OptionMenu(lf,select_resolution_var, *items)
+        select_resolution.config(width = 90,relief="solid",font=("Times%New%Roman", 8))
         select_resolution.place(x=220, y=80)
 
         '''Entries
