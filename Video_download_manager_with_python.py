@@ -1,5 +1,8 @@
 from tkinter import *
 from tkinter import filedialog
+import pytube
+import os
+import sys
 class VDM():
     def __init__(self):
         self.root = Tk()
@@ -50,9 +53,13 @@ class VDM():
         '''Entries
           ********'''
 
-        link_address_entry = Entry(lf, width=55, relief="solid",
+        link_address_var = StringVar()
+        link_address_entry = Entry(lf, textvariable = link_address_var,width=55, relief="solid",
                                       font=("Times%New%Roman", 13))
         link_address_entry.place(x=220, y=30)
+
+        yt = pytube.YouTube(link_address_var)
+        videos = yt.streams.filter(subtype='mp4', progressive=True)
 
         '''Button
           ******** '''
