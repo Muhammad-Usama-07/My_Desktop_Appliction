@@ -30,6 +30,13 @@ class VDM():
                               anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
         Destination_Label.place(x=20, y=120)
 
+        '''Quality Menu
+           ************'''
+        select_resolution_var = StringVar()
+
+        select_resolution = OptionMenu(lf, select_resolution_var, "one","two","three","four" )
+        select_resolution.place(x=220, y=80)
+
         '''Entries
           ********'''
 
