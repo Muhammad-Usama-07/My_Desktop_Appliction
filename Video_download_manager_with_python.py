@@ -41,10 +41,15 @@ class VDM():
         '''Entries
           ********'''
 
-        link_address_entry = Entry(lf, width=50, relief="solid",
+        link_address_entry = Entry(lf, width=55, relief="solid",
                                       font=("Times%New%Roman", 13))
         link_address_entry.place(x=220, y=30)
 
+        '''Button
+          ********'''
+        download_button = Button(lf, text="Save to", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+                                 relief="groove")
+        download_button.place(x=750, y=20)
 
 
 
