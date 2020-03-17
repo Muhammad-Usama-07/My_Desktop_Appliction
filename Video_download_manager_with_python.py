@@ -26,6 +26,10 @@ class VDM():
                                    anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
         Quality_Label.place(x=20, y=70)
 
+        Destination_Label = Label(lf, text="Destination:", bg="#33ff9e",
+                              anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
+        Destination_Label.place(x=20, y=120)
+
         '''Entries
           ********'''
 
