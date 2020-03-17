@@ -16,6 +16,14 @@ class VDM():
                         relief="solid", font="Times%New%Roman 16 bold", height=550)
         lf.pack(fill="both", expand=True, padx=20, pady=20)
 
+        # Labels
+
+        link_address_Label = Label(lf, text="Enter Your Link Address: ", bg="#33ff9e",
+                                anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
+        link_address_Label.place(x=20, y=20)
+
+
+
 
 
 r = Tk()
