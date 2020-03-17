@@ -47,9 +47,13 @@ class VDM():
 
         '''Button
           ********'''
-        download_button = Button(lf, text="Save to", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+        save_button = Button(lf, text="Save to", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
                                  relief="groove")
-        download_button.place(x=750, y=20)
+        save_button.place(x=750, y=20)
+
+        download_button = Button(lf, text="Download", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+                                 relief="groove")
+        download_button.place(x=700, y=130)
 
 
 
