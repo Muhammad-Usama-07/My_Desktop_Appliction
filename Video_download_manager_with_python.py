@@ -26,10 +26,6 @@ class VDM():
                                    anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
         Quality_Label.place(x=20, y=70)
 
-        Destination_Label = Label(lf, text="Destination:", bg="#33ff9e",
-                              anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
-        Destination_Label.place(x=20, y=120)
-
         '''Quality Menu
            ************'''
 
@@ -45,7 +41,7 @@ class VDM():
         '''Entries
           ********'''
 
-        link_address_entry = Entry(lf, width=65, relief="solid",
+        link_address_entry = Entry(lf, width=50, relief="solid",
                                       font=("Times%New%Roman", 13))
         link_address_entry.place(x=220, y=30)
 
