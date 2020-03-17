@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import messagebox
+from tkinter import filedialog
 class VDM():
     def __init__(self):
         self.root = Tk()
@@ -19,7 +19,10 @@ class VDM():
         '''Functions
           ************'''
         def save_path():
-            pass
+            filename = filedialog.asksaveasfile()
+            if filename is None:
+                print("Any name is required")
+
 
 
         # Labels
@@ -54,7 +57,7 @@ class VDM():
         '''Button
           ******** '''
         save_button = Button(lf, text="Save to", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
-                                 relief="groove")
+                                 relief="groove", command = save_path)
         save_button.place(x=750, y=20)
 
         download_button = Button(lf, text="Download", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
