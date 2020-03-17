@@ -12,6 +12,9 @@ class VDM():
                relief = "solid" ,
                anchor = "w" , height = 2 , font = "Times%New%Roman 11 bold italic" ).pack(fill = X)
 
+        lf = LabelFrame(self.root, text="Whatr you want", fg="red", bg='#33ff9e',
+                        relief="solid", font="Times%New%Roman 16 bold", height=550)
+        lf.pack(fill="both", expand=True, padx=20, pady=20)
 
 
 
