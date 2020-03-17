@@ -16,6 +16,12 @@ class VDM():
                         relief="solid", font="Times%New%Roman 16 bold", height=550)
         lf.pack(fill="both", expand=True, padx=20, pady=20)
 
+        '''Functions
+          ************'''
+        def save_path():
+            pass
+
+
         # Labels
 
         link_address_Label = Label(lf, text="Enter Your Link Address: ", bg="#33ff9e",
