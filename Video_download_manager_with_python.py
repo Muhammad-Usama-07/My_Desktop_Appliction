@@ -27,8 +27,8 @@ a = StringVar()
 '''Functions
   ************'''
 
-def complete_download():
-    pass
+def complete_download(stream = None, file_handle =  None):
+    messagebox.showinfo('Completion', 'Your Video has been downloaded')
 def download():
 
     # getting youtube link
