@@ -22,27 +22,7 @@ lf.pack(fill="both", padx=20, pady=20)
 '''Functions
   ************'''
 def download():
-    link = link_address_var.get()
-    yt = pytube.YouTube(link)
-    videos = yt.streams.filter(subtype='mp4', progressive=True)
-
-    items = []
-    for v in videos:
-        items.append(str(v))
-    select_resolution_var = StringVar()
-    select_resolution_var.set(items[0])
-
-    vid = select_resolution_var.get()
-
-    filename = filedialog.askdirectory()
-
-    dest = str(os.path.dirname(filename))
-
-    if filename is None:
-        print("Any name is required")
-        vid.download(dest)
-        print("\n Downloaded succssesfully")
-        sys.exit()
+    pass
 
 def save_path():
     filename = filedialog.askdirectory()
