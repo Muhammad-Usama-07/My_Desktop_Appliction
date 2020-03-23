@@ -19,10 +19,16 @@ lf = LabelFrame(root, text="Whatr you want", fg="red", bg='#33ff9e',
                 relief="solid", font="Times%New%Roman 16 bold", height=370)
 lf.pack(fill="both", padx=20, pady=20)
 
+"""Variables
+   *********"""
+link_address_var = StringVar()
+
 '''Functions
   ************'''
 def download():
-    pass
+    # Select youtube link you want to upload and print contents
+    link = link_address_var.get()
+    yt = YouTube(link)
 
 def save_path():
     filename = filedialog.askdirectory()
@@ -43,7 +49,7 @@ Quality_Label.place(x=20, y=70)
 '''Entries
   ********'''
 
-link_address_var = StringVar()
+
 link_address_entry = Entry(lf,  textvariable = link_address_var,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 link_address_entry.place(x=140, y=30)
