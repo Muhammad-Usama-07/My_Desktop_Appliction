@@ -79,7 +79,9 @@ save_entry.place(x=140, y=78)
 
 '''Progress Bar
   ******** '''
-
+progbar = Progressbar(lf,  orient = HORIZONTAL,
+              length = 790, mode = 'determinate')
+progbar.place(x = 30, y = 210)
 
 '''Button
   ******** '''
