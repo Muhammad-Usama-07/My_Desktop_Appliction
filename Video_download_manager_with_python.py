@@ -22,7 +22,7 @@ lf.pack(fill="both", padx=20, pady=20)
 """Variables
    *********"""
 link_address_var = StringVar()
-
+a = StringVar()
 '''Functions
   ************'''
 def download():
@@ -43,7 +43,8 @@ def save_path():
     print(file)
     if file is None:
         print("Any name is required")
-    return file
+    save_entry.insert(0,file)
+
 
 
 # Labels
@@ -63,8 +64,6 @@ Quality_Label.place(x=20, y=70)
 link_address_entry = Entry(lf,  textvariable = link_address_var,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 link_address_entry.place(x=140, y=30)
-te = save_path()
-print(te)
 save_entry = Entry(lf,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 save_entry.place(x=140, y=78)
