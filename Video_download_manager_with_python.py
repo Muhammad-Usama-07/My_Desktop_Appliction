@@ -25,8 +25,8 @@ lf.pack(fill="both", padx=20, pady=20)
 """Variables
    *********"""
 link_address_var = StringVar()
+yt = StringVar()
 a = StringVar()
-file_size = 0
 '''Functions
   ************'''
 def download_complete(stream = None, file_handle =  None):
@@ -39,7 +39,6 @@ def download():
 
     # getting qualities
     videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
-    print(videos)
     vid = videos[0]
     # getting Path of video
     path = save_entry.get()
@@ -49,10 +48,10 @@ def download():
 
 def save_path():
     file = filedialog.askdirectory()
-    print(file)
     if file is None:
         print("Any name is required")
     save_entry.insert(0,file)
+    print("Your Selected Location is: "+file)
 
 
 
