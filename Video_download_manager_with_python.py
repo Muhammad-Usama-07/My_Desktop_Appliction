@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from tkinter import messagebox
 import pytube
 from pytube import YouTube
 import os
@@ -25,15 +26,20 @@ link_address_var = StringVar()
 a = StringVar()
 '''Functions
   ************'''
+
+def complete_download():
+    pass
 def download():
+
     # getting youtube link
     link = link_address_var.get()
-    yt = YouTube(link)
+    yt = YouTube(link, on_complete_callback=complete_download)
 
     # getting qualities
     videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
     print(videos)
     vid = videos[0]
+    # getting Path of video
     path = save_entry.get()
     vid.download(path)
     print("your file: '{}'\nhas been downloaded...:)".format(yt.title))
@@ -78,6 +84,8 @@ save_button.place(x=660, y=75)
 download_button = Button(lf, text="Download", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
                          relief="groove", command = download)
 download_button.place(x=300, y=130)
+
+
 
 
 root.mainloop()
