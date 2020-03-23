@@ -1,10 +1,12 @@
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
-import pytube
+from tkinter.ttk import Progressbar
+from pytube import *
 from pytube import YouTube
-import os
-import sys
+from tqdm import tqdm
+import time
+
 
 root = Tk()
 root.title('Video Download Manager ')
@@ -24,16 +26,16 @@ lf.pack(fill="both", padx=20, pady=20)
    *********"""
 link_address_var = StringVar()
 a = StringVar()
+file_size = 0
 '''Functions
   ************'''
-
-def complete_download(stream = None, file_handle =  None):
+def download_complete(stream = None, file_handle =  None):
     messagebox.showinfo('Completion', 'Your Video has been downloaded')
 def download():
 
     # getting youtube link
     link = link_address_var.get()
-    yt = YouTube(link, on_complete_callback=complete_download)
+    yt = YouTube(link, on_complete_callback=download_complete)
 
     # getting qualities
     videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
@@ -42,7 +44,7 @@ def download():
     # getting Path of video
     path = save_entry.get()
     vid.download(path)
-    print("your file: '{}'\nhas been downloaded...:)".format(yt.title))
+    #print("your file: '{}'\nhas been downloaded...:)".format(yt.title))
     return
 
 def save_path():
@@ -74,6 +76,10 @@ link_address_entry.place(x=140, y=30)
 save_entry = Entry(lf,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 save_entry.place(x=140, y=78)
+
+'''Progress Bar
+  ******** '''
+
 
 '''Button
   ******** '''
