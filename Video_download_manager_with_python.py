@@ -26,9 +26,13 @@ link_address_var = StringVar()
 '''Functions
   ************'''
 def download():
-    # Select youtube link you want to upload and print contents
+    # getting youtube link
     link = link_address_var.get()
     yt = YouTube(link)
+
+    # getting qualities
+    videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
+
 
 def save_path():
     filename = filedialog.askdirectory()
