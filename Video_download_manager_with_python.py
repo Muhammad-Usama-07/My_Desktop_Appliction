@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
 import pytube
+from pytube import YouTube
 import os
 import sys
 
@@ -21,7 +22,27 @@ lf.pack(fill="both", expand=True, padx=20, pady=20)
 '''Functions
   ************'''
 def download():
-    pass
+    link = link_address_var.get()
+    yt = pytube.YouTube(link)
+    videos = yt.streams.filter(subtype='mp4', progressive=True)
+
+    items = []
+    for v in videos:
+        items.append(str(v))
+    select_resolution_var = StringVar()
+    select_resolution_var.set(items[0])
+
+    vid = select_resolution_var.get()
+
+    filename = filedialog.askdirectory()
+
+    dest = str(os.path.dirname(filename))
+
+    if filename is None:
+        print("Any name is required")
+        vid.download(dest)
+        print("\n Downloaded succssesfully")
+        sys.exit()
 
 def save_path():
     filename = filedialog.askdirectory()
@@ -40,41 +61,13 @@ Quality_Label = Label(lf, text="Select Quality: ", bg="#33ff9e",
 Quality_Label.place(x=20, y=70)
 
 '''Entries
-          ********'''
+  ********'''
 
 link_address_var = StringVar()
-link_address_entry = Entry(lf, width=55, relief="solid",
+link_address_entry = Entry(lf,  textvariable = link_address_var,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 link_address_entry.place(x=220, y=30)
 
-yt = pytube.YouTube(str(link_address_var))
-videos = yt.streams.filter(subtype='mp4', progressive=True)
-
-'''Menu
-    ****'''
-items = []
-for v in videos:
-    items.append(str(v))
-
-select_resolution_var = StringVar()
-select_resolution_var.set(items[0])
-
-select_resolution = OptionMenu(lf, select_resolution_var, *items)
-select_resolution.config(width=90, relief="solid", font=("Times%New%Roman", 8),
-                         bd=1.3)
-select_resolution.place(x=220, y=80)
-
-vid = select_resolution_var.get()
-
-filename = filedialog.askdirectory()
-
-dest = str(os.path.dirname(filename))
-
-if filename is None:
-    print("Any name is required")
-    vid.download(dest)
-    print("\n Downloaded succssesfully")
-    sys.exit()
 
 '''Button
   ******** '''
@@ -87,6 +80,6 @@ download_button = Button(lf, text="Download", bg='#4dff4d', font=("Times%New%Rom
 download_button.place(x=700, y=130)
 
 
-
+root.mainloop()
 
 
