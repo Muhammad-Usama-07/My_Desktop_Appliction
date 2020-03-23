@@ -34,8 +34,9 @@ def download():
     videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
     print(videos)
     vid = videos[0]
-    vid.download('D:\\')
-    print("your file: '{}'\nhas been downloaded...:)".format(yt.titles))
+    path = save_entry.get()
+    vid.download(path)
+    print("your file: '{}'\nhas been downloaded...:)".format(yt.title))
     return
 
 def save_path():
