@@ -20,7 +20,8 @@ lf.pack(fill="both", expand=True, padx=20, pady=20)
 
 '''Functions
   ************'''
-
+def download():
+    pass
 
 def save_path():
     filename = filedialog.askdirectory()
@@ -82,7 +83,7 @@ save_button = Button(lf, text="Save to", bg='#4dff4d', font=("Times%New%Roman", 
 save_button.place(x=750, y=20)
 
 download_button = Button(lf, text="Download", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
-                         relief="groove")
+                         relief="groove", command = download)
 download_button.place(x=700, y=130)
 
 
