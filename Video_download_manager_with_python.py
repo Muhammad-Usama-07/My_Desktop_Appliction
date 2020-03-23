@@ -32,12 +32,18 @@ def download():
 
     # getting qualities
     videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
-
+    print(videos)
+    vid = videos[0]
+    vid.download('D:\\')
+    print("your file: '{}'\nhas been downloaded...:)".format(yt.titles))
+    return
 
 def save_path():
-    filename = filedialog.askdirectory()
-    if filename is None:
+    file = filedialog.askdirectory()
+    print(file)
+    if file is None:
         print("Any name is required")
+    return file
 
 
 # Labels
@@ -57,6 +63,8 @@ Quality_Label.place(x=20, y=70)
 link_address_entry = Entry(lf,  textvariable = link_address_var,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 link_address_entry.place(x=140, y=30)
+te = save_path()
+print(te)
 save_entry = Entry(lf,width=55, relief="solid",
                            font=("Times%New%Roman", 13))
 save_entry.place(x=140, y=78)
