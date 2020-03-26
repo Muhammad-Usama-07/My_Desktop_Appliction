@@ -21,7 +21,12 @@ class AddMemberClass():
         # ***********
 
         def MemberAdded():
-            if (new_member_variable.get() == "" and member_code_variable.get() == 0 and member_telephoneNo_variable.get() == 0):
+            mc = member_code_variable_entry.get()
+            mv = member_validity_variable_entry.get()
+            mt = member_telephoneNo_variable_entry.get()
+            mn = new_member_variable_entry.get()
+            ma = Member_age_variable_entry.get()
+            if (mn == "" and mc == 0 and mt == 0):
                 messagebox.showerror( "Warning" , "Please Enter Name , code, \nand telephone number  at least" )
 
             else:
@@ -53,30 +58,25 @@ class AddMemberClass():
         # Entries
         # ********
 
-        new_member_variable = StringVar()
-        new_member_variable_entry = Entry( lf , textvariable = new_member_variable , width = 25 , relief = "solid" ,
+        new_member_variable_entry = Entry( lf , width = 25 , relief = "solid" ,
                                            font = ("Times%New%Roman" , 15 , "bold") )
         new_member_variable_entry.place( x = 300 , y = 30 )
 
-        Member_age_variable = IntVar()
-        Member_age_variable_entry = Entry( lf , textvariable = Member_age_variable , width = 25 , relief = "solid" ,
+        Member_age_variable_entry = Entry( lf , width = 25 , relief = "solid" ,
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Member_age_variable_entry.place( x = 300 , y = 90 )
 
-        member_validity_variable = IntVar()
-        member_validity_variable_entry = Entry( lf , textvariable = member_validity_variable , width = 25 ,
+        member_validity_variable_entry = Entry( lf  , width = 25 ,
                                                 relief = "solid" ,
                                                 font = ("Times%New%Roman" , 15 , "bold") )
         member_validity_variable_entry.place( x = 300 , y = 150 )
 
-        member_telephoneNo_variable = IntVar()
-        member_telephoneNo_variable_entry = Entry( lf , textvariable = member_telephoneNo_variable , width = 25 ,
+        member_telephoneNo_variable_entry = Entry( lf , width = 25 ,
                                                    relief = "solid" ,
                                                    font = ("Times%New%Roman" , 15 , "bold") )
         member_telephoneNo_variable_entry.place( x = 300 , y = 210 )
 
-        member_code_variable = IntVar()
-        member_code_variable_entry = Entry( lf , textvariable = member_code_variable , width = 25 , relief = "solid" ,
+        member_code_variable_entry = Entry( lf , width = 25 , relief = "solid" ,
                                             font = ("Times%New%Roman" , 15 , "bold") )
         member_code_variable_entry.place( x = 300 , y = 270 )
 
