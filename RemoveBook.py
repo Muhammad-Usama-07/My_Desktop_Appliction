@@ -20,7 +20,8 @@ class RemoveBookClass():
 
         # Functions
         # ***********
-
+        def Search():
+            pass
         def BookRemoved():
             rb = Remove_book_ISBN_entry.get()
             if (rb == 0):
@@ -63,6 +64,11 @@ class RemoveBookClass():
                                   relief = "groove"
                                   , command = BookRemoved )
         Remove_Book_button.place( x = 120 , y = 400 )
+
+        Search_button = Button(lf, text="Search", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
+                             relief="groove"
+                             , command=self.root.destroy)
+        Search_button.place(x=520, y=20)
 
         Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
