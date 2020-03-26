@@ -99,7 +99,7 @@ class RemoveBookClass():
     def RemoveBookFunc(self):
         self.root.mainloop()
 
-r = Tk()
+'''r = Tk()
 RemoveBookClass()
 
-r.mainloop()
+r.mainloop()'''
