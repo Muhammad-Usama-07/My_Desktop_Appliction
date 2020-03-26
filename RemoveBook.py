@@ -30,11 +30,13 @@ class RemoveBookClass():
                 cursor.execute("select *  from Book where ISBN='" + rb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "             "+str(row[0]) + '                                '+row[1]+\
-                                 '                           '+row[2]+'                         '+row[3]+\
-                                 '                                    '+str(row[4])
+                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
+                                 '                           ' + row[2] + '                         ' + row[3] + \
+                                 '                                    ' + str(row[4])
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
+
+
         def BookRemoved():
             rb = Remove_book_ISBN_entry.get()
             if (rb == 0):
