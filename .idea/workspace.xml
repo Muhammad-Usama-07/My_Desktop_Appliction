@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cc3bf62-4ea4-436e-b56f-b8a6969bd40e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Library_Management_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Library_Management_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddBook.py" beforeDir="false" afterPath="$PROJECT_DIR$/AddBook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryLoginForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryLoginForm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginForm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/MenuPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeeuser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeuser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/green-round-glossy-login-icon-vector-2976248.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login-icon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-approved.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user.svg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +15,7 @@
   </component>
   <component name="ProjectId" id="1Xr77yA0tumeC1dq0TruaXnYRsu" />
   <component name="PropertiesComponent">
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -46,7 +30,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.LibraryLoginForm">
+  <component name="RunManager" selected="Python.interfacewithdb">
     <configuration name="LibraryLoginForm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Library_Management_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,8 +73,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="interfacewithdb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Library_Management_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interfacewithdb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.interfacewithdb" />
         <item itemvalue="Python.LibraryLoginForm" />
         <item itemvalue="Python.ListOfBookIssue" />
       </list>

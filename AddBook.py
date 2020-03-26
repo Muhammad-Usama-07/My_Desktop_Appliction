@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector as mysql
 class AddBookClass():
     def __init__(self):
         self.root = Tk()
@@ -21,11 +22,14 @@ class AddBookClass():
         # ***********
 
         def BookAdded():
-            if (new_book_name.get() == "" and new_book_auther_name.get() == "" and
-                    new_ISBN_number.get() == 0):
+            bn = new_book_name_entry.get()
+            ba = new_book_auther_entry.get()
+            isbn = new_ISBN_number_entry
+            if (new_book_name_entry.get() == "" and new_book_auther_entry.get() == "" and
+                    new_ISBN_number_entry.get() == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
             else:
-                messagebox.showerror( "Alter" , "Enter Correct Username and password" )
+                pass
 
         # Labels
         new_ISBN_number_Label = Label( lf , text = "Write new ISBN of the book:" , bg = "#33ff9e" ,
@@ -50,29 +54,25 @@ class AddBookClass():
 
         # Entries
         # ********
-
-        new_ISBN_number = IntVar()
-        new_ISBN_number_entry = Entry( lf , textvariable = new_ISBN_number , width = 25 , relief = "solid" ,
+        new_ISBN_number_entry = Entry( lf  , width = 25 , relief = "solid" ,
                                        font = ("Times%New%Roman" , 15 , "bold") )
         new_ISBN_number_entry.place( x = 300 , y = 30 )
 
-        new_book_name = StringVar()
-        new_book_name_entry = Entry( lf , textvariable = new_book_name , width = 25 , relief = "solid" ,
+        new_book_name_entry = Entry( lf , width = 25 , relief = "solid" ,
                                      font = ("Times%New%Roman" , 15 , "bold") )
         new_book_name_entry.place( x = 300 , y = 90 )
 
-        new_book_auther_name = StringVar()
-        new_book_auther_entry = Entry( lf , textvariable = new_book_auther_name , width = 25 , relief = "solid" ,
+        new_book_auther_entry = Entry( lf , width = 25 , relief = "solid" ,
                                        font = ("Times%New%Roman" , 15 , "bold") )
         new_book_auther_entry.place( x = 300 , y = 150 )
 
-        Book_edition_number = IntVar()
-        Book_edition_number_entry = Entry( lf , textvariable = Book_edition_number , width = 25 , relief = "solid" ,
+        Book_edition_number_entry = Entry( lf  , width = 25 , relief = "solid" ,
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Book_edition_number_entry.place( x = 300 , y = 210 )
 
         Book_equantity = IntVar()
-        Book_equantity_entry = Entry( lf , textvariable = Book_equantity , width = 25 , relief = "solid" ,
+        Book_equantity_entry = Entry( lf
+                                      , width = 25 , relief = "solid" ,
                                       font = ("Times%New%Roman" , 15 , "bold") )
         Book_equantity_entry.place( x = 300 , y = 270 )
 
@@ -93,6 +93,6 @@ class AddBookClass():
 
 
 
-'''r = Tk()
+r = Tk()
 obj = AddBookClass()
-r.mainloop()'''
+r.mainloop()

@@ -42,11 +42,6 @@ lf1 = LabelFrame( r , text = "Login Your Account" , fg = "red" , bg = '#33ff9e' 
                   relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550)
 lf1.pack( fill = "both" , expand = TRUE , padx = 20 , pady = 20 )
 
-'''canv = Canvas(lf1, width=200, height=200, bg='#33ff9e', relief = "solid" )
-canv.place(x = 300, y = 10)
-img = ImageTk.PhotoImage(Image.open("login.png"))
-
-canv.create_image(20, 20, anchor=NW, image=img)'''
 
 # Creating Label in a frame
 
