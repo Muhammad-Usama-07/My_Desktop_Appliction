@@ -31,7 +31,7 @@ class AddBookClass():
                     new_ISBN_number_entry.get() == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
             else:
-                con = mysql.connect(host = "localhost", user= "root", password = "", database= "library_database")
+                con = mysql.connect(host = "localhost", user= "root", password = "", database= "lib_db")
                 cursor = con.cursor()
                 cursor.execute("insert into Book values('"+ isbn +"','"+ bn +"','"+ ba +"','"+ be +"','"+ bq +"')")
                 cursor.execute("commit")
