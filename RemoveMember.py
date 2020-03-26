@@ -20,7 +20,9 @@ class RemoveMemberClass():
         # ***********
 
         def MembersRemoved():
-            
+            rb = Remove_Members_entry.get()
+            if (rb == 0):
+                messagebox.showerror("Warning", "Please Enter ISBN at least")
 
         '''Labels
           ********'''
