@@ -20,7 +20,7 @@ class RemoveMemberClass():
         # ***********
 
         def MembersRemoved():
-            pass
+            
 
         '''Labels
           ********'''
