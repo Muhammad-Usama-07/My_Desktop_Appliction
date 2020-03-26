@@ -21,7 +21,18 @@ class RemoveBookClass():
         # Functions
         # ***********
         def Search():
-            pass
+            rb = Remove_book_ISBN_entry.get()
+            if (rb == 0):
+                messagebox.showerror( "Warning" , "Please Enter ISBN at least" )
+            else:
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("select *  from Book where ISBN='" + rb + "'")
+                rows = cursor.fetchall()
+                for row in rows:
+                    insertdata = str(row)
+                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                con.close()
         def BookRemoved():
             rb = Remove_book_ISBN_entry.get()
             if (rb == 0):
@@ -67,7 +78,7 @@ class RemoveBookClass():
 
         Search_button = Button(lf, text="Search", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
                              relief="groove"
-                             , command=self.root.destroy)
+                             , command=Search)
         Search_button.place(x=520, y=20)
 
         Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
