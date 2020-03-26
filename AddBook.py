@@ -29,7 +29,8 @@ class AddBookClass():
                     new_ISBN_number_entry.get() == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
             else:
-                pass
+                con = mysql.connect(host = "localhost", user= "root", password = "", database= "library_db")
+                
 
         # Labels
         new_ISBN_number_Label = Label( lf , text = "Write new ISBN of the book:" , bg = "#33ff9e" ,
