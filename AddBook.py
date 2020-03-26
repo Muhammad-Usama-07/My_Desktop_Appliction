@@ -24,13 +24,19 @@ class AddBookClass():
         def BookAdded():
             bn = new_book_name_entry.get()
             ba = new_book_auther_entry.get()
-            isbn = new_ISBN_number_entry
+            isbn = new_ISBN_number_entry.get()
+            be = Book_edition_number_entry.get()
+            bq = Book_quantity_entry.get()
             if (new_book_name_entry.get() == "" and new_book_auther_entry.get() == "" and
                     new_ISBN_number_entry.get() == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
             else:
-                con = mysql.connect(host = "localhost", user= "root", password = "", database= "library_db")
-                
+                con = mysql.connect(host = "localhost", user= "root", password = "", database= "library_database")
+                cursor = con.cursor()
+                cursor.execute("insert into Book values('"+ isbn +"','"+ bn +"','"+ ba +"','"+ be +"','"+ bq +"')")
+                cursor.execute("commit")
+                messagebox.showinfo("Insert status"," Data insert successfully")
+                con.close()
 
         # Labels
         new_ISBN_number_Label = Label( lf , text = "Write new ISBN of the book:" , bg = "#33ff9e" ,
@@ -71,11 +77,10 @@ class AddBookClass():
                                            font = ("Times%New%Roman" , 15 , "bold") )
         Book_edition_number_entry.place( x = 300 , y = 210 )
 
-        Book_equantity = IntVar()
-        Book_equantity_entry = Entry( lf
+        Book_quantity_entry = Entry( lf
                                       , width = 25 , relief = "solid" ,
                                       font = ("Times%New%Roman" , 15 , "bold") )
-        Book_equantity_entry.place( x = 300 , y = 270 )
+        Book_quantity_entry.place( x = 300 , y = 270 )
 
         Add_Book_button = Button( lf , text = "Add Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold") ,
                                   relief = "groove"
