@@ -30,7 +30,7 @@ class RemoveBookClass():
                 cursor.execute("select *  from Book where ISBN='" + rb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = str(row)
+                    insertdata = str(row[0]) + '          '+row[1]
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def BookRemoved():
@@ -62,10 +62,12 @@ class RemoveBookClass():
         #Creating ScrollBar
 
         scroll_Bar = Scrollbar(lf, width = 25, relief = "solid")
-        scroll_Bar.place(x = 799, y = 80, height = 245)
-
-        Book_Detail = Listbox(lf, width = 129, height = 15, relief = "solid" ,yscrollcommand =  scroll_Bar.set)
+        scroll_Bar.place(x = 789, y = 80, height = 250)
+        Details = "          ISBN"+ "                         Book Name"+"                         Auther"\
+                  +"                         Edition"+"                         Quantity"
+        Book_Detail = Listbox(lf, width = 85, height = 13, relief = "solid" ,yscrollcommand =  scroll_Bar.set,font = ("Times%New%Roman" , 12 , "bold italic"))
         Book_Detail.place(x = 20, y = 80)
+        Book_Detail.insert(0, Details)
         scroll_Bar.config( command = Book_Detail.yview )
 
         '''Buttons
