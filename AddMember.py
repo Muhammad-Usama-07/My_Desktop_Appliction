@@ -30,11 +30,20 @@ class AddMemberClass():
                 messagebox.showerror( "Warning" , "Please Enter Name , code, \nand telephone number  at least" )
 
             else:
-                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
-                cursor = con.cursor()
-                cursor.execute("insert into Book values('" + mc + "','" + mn + "','" + ma + "','" + mv + "','" + mt + "')")
-                cursor.execute("commit")
-                con.close()
+                try:
+                    con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                    cursor = con.cursor()
+                    cursor.execute("insert into members values('" + mc + "','" + mn + "','" + ma + "','" + mv + "','" + mt + "')")
+                    cursor.execute("commit")
+                    member_code_variable_entry.delete(0, 'end')
+                    Member_age_variable_entry.delete(0, 'end')
+                    new_member_variable_entry.delete(0, 'end')
+                    member_validity_variable_entry.delete(0, 'end')
+                    member_telephoneNo_variable_entry.delete(0, 'end')
+                    messagebox.showinfo("Insert status", " Data insert successfully")
+                    con.close()
+                except mysql.errors.IntegrityError:
+                    messagebox.showerror('Warning', 'insert another isbn')
 
         # Labels
         new_member_name_Label = Label( lf , text = "Enter name of new member:" , bg = "#33ff9e" ,
