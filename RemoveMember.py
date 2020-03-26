@@ -20,7 +20,20 @@ class RemoveMemberClass():
         # Functions
         # ***********
         def Search():
-            pass
+            rmm = Remove_Members_entry.get()
+            if (rmm == 0):
+                messagebox.showerror("Warning", "Please Enter ISBN at least")
+            else:
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("select *  from Book where ISBN='" + rmm + "'")
+                rows = cursor.fetchall()
+                for row in rows:
+                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
+                                 '                           ' + row[2] + '                         ' + row[3] + \
+                                 '                                    ' + str(row[4])
+                    Members_Detail.insert(Members_Detail.size() + 1, insertdata)
+                con.close()
         def MembersRemoved():
             rm = Remove_Members_entry.get()
             if (rm == 0):
