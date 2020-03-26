@@ -105,7 +105,7 @@ class AddMemberClass():
 
 
 
-r = Tk()
+'''r = Tk()
 AddMemberClass()
 
-r.mainloop()
+r.mainloop()'''
