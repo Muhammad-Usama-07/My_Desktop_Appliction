@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector as mysql
 class AddMemberClass():
     def __init__(self):
         self.root = Tk()
@@ -24,7 +25,9 @@ class AddMemberClass():
                 messagebox.showerror( "Warning" , "Please Enter Name , code, \nand telephone number  at least" )
 
             else:
-                pass
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                con.close()
 
         # Labels
         new_member_name_Label = Label( lf , text = "Enter name of new member:" , bg = "#33ff9e" ,
