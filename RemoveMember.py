@@ -29,9 +29,9 @@ class RemoveMemberClass():
                 cursor.execute("select *  from Book where ISBN='" + rmm + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
-                                 '                           ' + row[2] + '                         ' + row[3] + \
-                                 '                                    ' + str(row[4])
+                    insertdata = "            " + str(row[0]) + '                           ' + row[1] + \
+                                 '                                   ' + row[2] + '                                ' + row[3] + \
+                                 '                                ' + str(row[4])
                     Members_Detail.insert(Members_Detail.size() + 1, insertdata)
                 con.close()
         def MembersRemoved():
@@ -41,8 +41,9 @@ class RemoveMemberClass():
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
-                cursor.execute("delete from memebrs where Code='" + rm + "'")
+                cursor.execute("delete from Members where Code='" + rm + "'")
                 cursor.execute("commit")
+                Remove_Members_entry.delete(0, 'end')
                 messagebox.showinfo("Delete status", " Data Deleted successfully")
                 con.close()
 
@@ -63,10 +64,10 @@ class RemoveMemberClass():
         #Creating ScrollBar
 
         scroll_Bar = Scrollbar(lf, width = 25, relief = "solid")
-        scroll_Bar.place(x = 789, y = 80, height = 273)
+        scroll_Bar.place(x = 789, y = 80, height = 250)
         Details = "          Code" + "                       Member Name" + "                     age" \
                   + "                         Vali: Year" + "                     Telephone NO:"
-        dash = "          *****" + "                          ******************" + "                  ********" \
+        dash = "          *******" + "                       ******************" + "                  ********" \
                + "                       ***********" + "                      ******************"
         Members_Detail = Listbox(lf, width=85, height=13, relief="solid", yscrollcommand=scroll_Bar.set,
                               font=("Times%New%Roman", 12, "bold italic"))
@@ -86,7 +87,7 @@ class RemoveMemberClass():
         Search_button = Button(lf, text="Search", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
                                relief="groove"
                                , command=Search)
-        Search_button.place(x=520, y=20)
+        Search_button.place(x=540, y=20)
 
         Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
