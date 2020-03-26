@@ -35,6 +35,11 @@ class AddBookClass():
                 cursor = con.cursor()
                 cursor.execute("insert into Book values('"+ isbn +"','"+ bn +"','"+ ba +"','"+ be +"','"+ bq +"')")
                 cursor.execute("commit")
+                new_book_name_entry.delete(0, 'end')
+                new_book_auther_entry.delete(0, 'end')
+                new_ISBN_number_entry.delete(0, 'end')
+                Book_edition_number_entry.delete(0, 'end')
+                Book_quantity_entry.delete(0, 'end')
                 messagebox.showinfo("Insert status"," Data insert successfully")
                 con.close()
 
