@@ -21,12 +21,14 @@ class RemoveMemberClass():
         # ***********
 
         def MembersRemoved():
-            rb = Remove_Members_entry.get()
-            if (rb == 0):
+            rm = Remove_Members_entry.get()
+            if (rm == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
+                cursor.execute("delete from memebrs where Code='" + rm + "'")
+                cursor.execute("commit")
                 con.close()
 
         '''Labels
