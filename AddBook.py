@@ -104,6 +104,6 @@ class AddBookClass():
 
 
 
-'''r = Tk()
+r = Tk()
 obj = AddBookClass()
-r.mainloop()'''
+r.mainloop()
