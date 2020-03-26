@@ -31,17 +31,20 @@ class AddBookClass():
                     new_ISBN_number_entry.get() == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN, name, and Auther at least" )
             else:
-                con = mysql.connect(host = "localhost", user= "root", password = "", database= "lib_db")
-                cursor = con.cursor()
-                cursor.execute("insert into Book values('"+ isbn +"','"+ bn +"','"+ ba +"','"+ be +"','"+ bq +"')")
-                cursor.execute("commit")
-                new_book_name_entry.delete(0, 'end')
-                new_book_auther_entry.delete(0, 'end')
-                new_ISBN_number_entry.delete(0, 'end')
-                Book_edition_number_entry.delete(0, 'end')
-                Book_quantity_entry.delete(0, 'end')
-                messagebox.showinfo("Insert status"," Data insert successfully")
-                con.close()
+                try:
+                    con = mysql.connect(host = "localhost", user= "root", password = "", database= "lib_db")
+                    cursor = con.cursor()
+                    cursor.execute("insert into Book values('"+ isbn +"','"+ bn +"','"+ ba +"','"+ be +"','"+ bq +"')")
+                    cursor.execute("commit")
+                    new_book_name_entry.delete(0, 'end')
+                    new_book_auther_entry.delete(0, 'end')
+                    new_ISBN_number_entry.delete(0, 'end')
+                    Book_edition_number_entry.delete(0, 'end')
+                    Book_quantity_entry.delete(0, 'end')
+                    messagebox.showinfo("Insert status"," Data insert successfully")
+                    con.close()
+                except mysql.errors.IntegrityError:
+                    messagebox.showerror('Warning', 'insert another isbn')
 
         # Labels
         new_ISBN_number_Label = Label( lf , text = "Write new ISBN of the book:" , bg = "#33ff9e" ,
@@ -104,6 +107,6 @@ class AddBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 obj = AddBookClass()
-r.mainloop()
+r.mainloop()'''
