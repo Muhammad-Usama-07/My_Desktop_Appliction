@@ -10,7 +10,7 @@ import time
 
 root = Tk()
 root.title('Video Download Manager ')
-root.geometry("900x400+300+50")
+root.geometry("900x350+300+50")
 root.minsize(400, 200)
 root.maxsize(1100, 700)
 root.configure(bg='#bcdebb')
@@ -38,7 +38,8 @@ def download():
     yt = YouTube(link, on_complete_callback=download_complete)
 
     # getting qualities
-    videos = yt.streams.filter(subtype='mp4', progressive=True, res="720p")
+    videos = yt.streams.filter(subtype='mp4', progressive=True, res="360p")
+    print(videos)
     vid = videos[0]
     # getting Path of video
     path = save_entry.get()
@@ -65,6 +66,10 @@ Quality_Label = Label(lf, text="your Location: ", bg="#33ff9e",
                       anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
 Quality_Label.place(x=20, y=70)
 
+'''Progress_Label = Label(lf, text="Progress: ", bg="#33ff9e",
+                      anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
+Progress_Label.place(x=30, y=200)'''
+
 '''Entries
   ********'''
 
@@ -77,10 +82,10 @@ save_entry = Entry(lf,width=55, relief="solid",
 save_entry.place(x=140, y=78)
 
 '''Progress Bar
-  ******** '''
+  ******** 
 progbar = Progressbar(lf,  orient = HORIZONTAL,
               length = 790, mode = 'determinate')
-progbar.place(x = 30, y = 210)
+progbar.place(x = 30, y = 240)'''
 
 '''Button
   ******** '''
