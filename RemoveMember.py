@@ -63,7 +63,7 @@ class RemoveMemberClass():
 
 
 
-'''r = Tk()
+r = Tk()
 RemoveMemberClass()
 
-r.mainloop()'''
+r.mainloop()
