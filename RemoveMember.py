@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector as mysql
 class RemoveMemberClass():
     def __init__(self):
         self.root = Tk()
@@ -23,6 +24,10 @@ class RemoveMemberClass():
             rb = Remove_Members_entry.get()
             if (rb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
+            else:
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                con.close()
 
         '''Labels
           ********'''
