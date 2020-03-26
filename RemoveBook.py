@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+from Library_Management_project import AddBook
+import mysql.connector as mysql
 class RemoveBookClass():
     def __init__(self):
         self.root = Tk()
@@ -20,24 +22,30 @@ class RemoveBookClass():
         # ***********
 
         def BookRemoved():
-            if (Remove_Book_var.get() == 0):
+            rb = Remove_book_ISBN_entry.get()
+            if (rb == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN at least" )
             else:
-                pass
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("delete from Book where ISBN='" + rb + "'")
+                cursor.execute("commit")
+                Remove_book_ISBN_entry.delete(0, 'end')
+                messagebox.showinfo("Delete status", " Data Deleted successfully")
+                con.close()
 
         '''Labels
           ********'''
-        Remove_book_name_Label = Label( lf , text = "Enter ISBN of Book:" , bg = "#33ff9e" ,
+        Remove_book_ISBN_Label = Label( lf , text = "Enter ISBN of Book:" , bg = "#33ff9e" ,
                                         anchor = "w" , height = 2 , font = ("Times%New%Roman" , 14 , "bold italic") )
-        Remove_book_name_Label.place( x = 20 , y = 20 )
+        Remove_book_ISBN_Label.place( x = 20 , y = 20 )
 
 
         '''Entries
            ********'''
-        Remove_Book_var = IntVar()
-        Remove_Book_entry = Entry( lf , textvariable = Remove_Book_var , width = 25 , relief = "solid" ,
+        Remove_book_ISBN_entry = Entry( lf , width = 25 , relief = "solid" ,
                                            font = ("Times%New%Roman" , 15 , "bold") )
-        Remove_Book_entry.place( x = 220 , y = 30 )
+        Remove_book_ISBN_entry.place( x = 220 , y = 30 )
 
         #Creating ScrollBar
 
@@ -64,9 +72,7 @@ class RemoveBookClass():
     def RemoveBookFunc(self):
         self.root.mainloop()
 
-
-
- r = Tk()
+r = Tk()
 RemoveBookClass()
 
 r.mainloop()

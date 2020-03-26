@@ -99,7 +99,7 @@ class AddBookClass():
 
 
         def AddBookFunc(self):
-            self.root.mainloop()
+            new_ISBN_number_entry.get()
 
 
 
