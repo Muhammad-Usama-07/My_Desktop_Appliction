@@ -40,9 +40,11 @@ class RemoveMemberClass():
 
         scroll_Bar = Scrollbar(lf, width = 25, relief = "solid")
         scroll_Bar.place(x = 789, y = 80, height = 273)
-
+        Details = "          ISBN" + "                         Book Name" + "                         Auther" \
+                  + "                         Edition" + "                         Quantity"
         Members_Detail = Text(lf, width = 85, height = 15, relief = "solid" ,yscrollcommand =  scroll_Bar.set,font = ("Times%New%Roman" , 12 , "bold italic"))
         Members_Detail.place(x = 20, y = 80)
+        Members_Detail.insert(0.0, Details)
         scroll_Bar.config( command = Members_Detail.yview )
 
         '''Buttons
