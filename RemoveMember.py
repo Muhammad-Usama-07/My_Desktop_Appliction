@@ -19,7 +19,8 @@ class RemoveMemberClass():
 
         # Functions
         # ***********
-
+        def Search():
+            pass
         def MembersRemoved():
             rm = Remove_Members_entry.get()
             if (rm == 0):
@@ -29,6 +30,7 @@ class RemoveMemberClass():
                 cursor = con.cursor()
                 cursor.execute("delete from memebrs where Code='" + rm + "'")
                 cursor.execute("commit")
+                messagebox.showinfo("Delete status", " Data Deleted successfully")
                 con.close()
 
         '''Labels
@@ -67,6 +69,11 @@ class RemoveMemberClass():
                                   relief = "groove"
                                   , command = MembersRemoved )
         Remove_Member_button.place( x = 120 , y = 400 )
+
+        Search_button = Button(lf, text="Search", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
+                               relief="groove"
+                               , command=Search)
+        Search_button.place(x=520, y=20)
 
         Back_button = Button( lf , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
                               relief = "groove"
