@@ -32,6 +32,8 @@ class AddMemberClass():
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
+                cursor.execute("insert into Book values('" + mc + "','" + mn + "','" + ma + "','" + mv + "','" + mt + "')")
+                cursor.execute("commit")
                 con.close()
 
         # Labels
