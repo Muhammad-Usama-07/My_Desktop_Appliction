@@ -60,6 +60,8 @@ class IssueBookClass():
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
                 cursor.execute("INSERT INTO `issue_book`(Cm, ISBN_of_book) SELECT members.Code, book.ISBN FROM members, book WHERE members.Code = '" + mc + "' AND book.ISBN = '" + bi + "'")
+                cursor.execute("commit")
+                messagebox.showinfo("Insert status", " Data insert successfully")
                 con.close()
 
         # Labels
