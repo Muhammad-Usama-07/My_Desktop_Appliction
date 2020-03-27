@@ -61,7 +61,7 @@ class IssueBookClass():
                 cursor = con.cursor()
                 cursor.execute("INSERT INTO `issue_book`(Cm, ISBN_of_book) SELECT members.Code, book.ISBN FROM members, book WHERE members.Code = '" + mc + "' AND book.ISBN = '" + bi + "'")
                 cursor.execute("commit")
-                messagebox.showinfo("Insert status", " Data insert successfully")
+                messagebox.showinfo("Insert status", " Book Has Been Issued")
                 con.close()
 
         # Labels
@@ -131,6 +131,6 @@ class IssueBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 IssueBookClass()
-r.mainloop()
+r.mainloop()'''
