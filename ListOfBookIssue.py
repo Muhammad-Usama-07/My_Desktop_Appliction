@@ -101,6 +101,6 @@ class ListBookIssueClass():
 
 
 
-r = Tk()
+'''r = Tk()
 obj = ListBookIssueClass()
-r.mainloop()
+r.mainloop()'''
