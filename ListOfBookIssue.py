@@ -30,6 +30,7 @@ class ListBookIssueClass():
         '''Functions
           ***********'''
         def search_for_issue_book():
+            Book_Detail.delete(2, END)
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -64,13 +65,13 @@ class ListBookIssueClass():
                 *********
                 '''
         scroll_Bar = Scrollbar(lf3, width=25, relief="solid")
-        scroll_Bar.place(x=834, y=10, height=288)
+        scroll_Bar.place(x=608, y=10, height=288)
 
         Details = "          Member Code" + "                       Book Code"
         dash = "          *****************" + "                       **************"
-        Book_Detail = Listbox(lf3, width=90, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
+        Book_Detail = Listbox(lf3, width=45, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
                               font=("Times%New%Roman", 12, "bold italic"))
-        Book_Detail.place(x=20, y=10)
+        Book_Detail.place(x=200, y=10)
         Book_Detail.insert(0, Details)
         Book_Detail.insert(1, dash)
 
