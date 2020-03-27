@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector as mysql
 class IssueBookClass():
     def __init__(self):
         self.root = Tk()
@@ -21,7 +22,21 @@ class IssueBookClass():
         def CheckBook():
             pass
         def CheckMemebr():
-            pass
+            mc = Member_code_entry.get()
+            if (mc == 0):
+                messagebox.showerror("Warning", "Please Enter ISBN at least")
+            else:
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("select *  from Members where Code='" + mc + "'")
+                rows = cursor.fetchall()
+                for row in rows:
+                    insertdata = "            " + str(row[0]) + '                           ' + row[1] + \
+                                 '                                   ' + str(row[2]) + '                                ' + \
+                                 str(row[3]) + \
+                                 '                                ' + str(row[4])
+                    Detail.insert(Detail.size() + 1, insertdata)
+                con.close()
 
         def BookIssued():
             bi = Book_ISBN_var.get()
