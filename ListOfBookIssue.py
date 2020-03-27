@@ -36,12 +36,10 @@ class ListBookIssueClass():
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
-                cursor.execute("select *  from Book where ISBN='" + sb + "'")
+                cursor.execute("select *  from Issue_book where Cm='" + sb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
-                                 '                           ' + row[2] + '                         ' + row[3] + \
-                                 '                                    ' + str(row[4])
+                    insertdata = "               " + str(row[0]) + '                                               ' + str(row[1])
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def All_books():
@@ -49,8 +47,7 @@ class ListBookIssueClass():
 
         '''Entries
           ********'''
-        Book_name = StringVar()
-        Book_name_entry = Entry( lf2 , textvariable = Book_name , width = 25 , relief = "solid" ,
+        Book_name_entry = Entry( lf2 , width = 25 , relief = "solid" ,
                                        font = ("Times%New%Roman" , 15 , "bold") )
         Book_name_entry.place( x = 40 , y = 40 )
 
@@ -61,10 +58,8 @@ class ListBookIssueClass():
         scroll_Bar = Scrollbar(lf3, width=25, relief="solid")
         scroll_Bar.place(x=834, y=10, height=288)
 
-        Details = "          Code" + "                       Member Name" + "                     age" \
-                  + "                         Vali: Year" + "                     Telephone NO:"
-        dash = "          *******" + "                       ******************" + "                  ********" \
-               + "                       ***********" + "                      ******************"
+        Details = "          Member Code" + "                       Book Code"
+        dash = "          *****************" + "                       **************"
         Book_Detail = Listbox(lf3, width=90, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
                               font=("Times%New%Roman", 12, "bold italic"))
         Book_Detail.place(x=20, y=10)
