@@ -32,13 +32,13 @@ class AllBookClass():
           ***********'''
 
         def search_for_book():
-            rb = Book_name_entry.get()
-            if (rb == 0):
+            sb = Book_name_entry.get()
+            if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
-                cursor.execute("select *  from Book where ISBN='" + rb + "'")
+                cursor.execute("select *  from Book where ISBN='" + sb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
                     insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
@@ -47,7 +47,20 @@ class AllBookClass():
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def All_books():
-
+            sb = Book_name_entry.get()
+            if (sb == 0):
+                messagebox.showerror("Warning", "Please Enter ISBN at least")
+            else:
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("select *  from Book ")
+                rows = cursor.fetchall()
+                for row in rows:
+                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
+                                 '                           ' + row[2] + '                         ' + row[3] + \
+                                 '                                    ' + str(row[4])
+                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                con.close()
         '''Entries
           ********'''
         Book_name_entry = Entry( lf2 , width = 25 , relief = "solid" ,
