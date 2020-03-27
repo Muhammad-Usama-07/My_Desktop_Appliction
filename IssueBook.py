@@ -29,9 +29,9 @@ class IssueBookClass():
                 cursor.execute("select *  from Book where ISBN='" + bi + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
+                    insertdata = "             " + str(row[0]) + '                   ' + row[1] + \
                                  '                           ' + row[2] + '                         ' + row[3] + \
-                                 '                                    ' + str(row[4])
+                                 '                                             ' + str(row[4])
                     Detail.insert(Detail.size() + 1, insertdata)
                 con.close()
         def CheckMemebr():
@@ -44,20 +44,23 @@ class IssueBookClass():
                 cursor.execute("select *  from Members where Code='" + mc + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "            " + str(row[0]) + '                           ' + row[1] + \
+                    insertdata = "            " + str(row[0]) + '                  ' + row[1] + \
                                  '                                   ' + str(row[2]) + '                                ' + \
                                  str(row[3]) + \
-                                 '                                ' + str(row[4])
+                                 '                                  ' + str(row[4])
                     Detail.insert(Detail.size() + 1, insertdata)
                 con.close()
 
         def BookIssued():
-            bi = Book_ISBN_var.get()
-            mc = Member_code_var.get()
+            bi = Book_ISBN_entry.get()
+            mc = Member_code_entry.get()
             if (bi == 0 and mc == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN and code of member" )
             else:
-                pass
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("INSERT INTO `issue_book`(Cm, ISBN_of_book) SELECT members.Code, book.ISBN FROM members, book WHERE members.Code = '" + mc + "' AND book.ISBN = '" + bi + "'")
+                con.close()
 
         # Labels
 
@@ -89,10 +92,10 @@ class IssueBookClass():
         scroll_Bar = Scrollbar(lf, width=25, relief="solid")
         scroll_Bar.place(x=823, y=120, height=288)
 
-        Titles = "          Code" + "                       Member Name" + "                     age" \
-                  + "                         Vali: Year" + "                     Telephone NO:"
-        dash = "          *******" + "                       ******************" + "                  ********" \
-               + "                       ***********" + "                      ******************"
+        Titles = "          Code" + "               Member/Book" + "              age/Auther" \
+                  + "            Vali: Year/Edition" + "              Telephone NO/Quantity:"
+        dash = "          *******" + "              ******************" + "              *************" \
+               + "              *********************" + "             *******************************"
         Detail = Listbox(lf, width=90, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
                               font=("Times%New%Roman", 12, "bold italic"))
         Detail.place(x=10, y=120)
