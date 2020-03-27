@@ -47,7 +47,6 @@ class AllBookClass():
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def All_books():
-            pass
 
         '''Entries
           ********'''
