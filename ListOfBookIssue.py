@@ -29,7 +29,7 @@ class ListBookIssueClass():
 
         '''Functions
           ***********'''
-        def search_for_book():
+        def search_for_issue_book():
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -42,7 +42,7 @@ class ListBookIssueClass():
                     insertdata = "               " + str(row[0]) + '                                               ' + str(row[1])
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
-        def All_books():
+        def All_issue_books():
             pass
 
         '''Entries
@@ -72,12 +72,12 @@ class ListBookIssueClass():
            ******'''
         List_All_books_button = Button( lf1 , text = "All books" , bg = '#4dff4d' ,
                                      font = ("Times%New%Roman" , 17 , "bold") ,
-                                     relief = "groove")
+                                     relief = "groove", command = All_issue_books)
         List_All_books_button.place( x = 150 , y = 30)
 
         Search_for_book_button = Button( lf2 , text = "Search" , bg = '#4dff4d' ,
                                         font = ("Times%New%Roman" , 17 , "bold") ,
-                                        relief = "groove", command = search_for_book )
+                                        relief = "groove", command = search_for_issue_book )
         Search_for_book_button.place( x = 340 , y = 30 )
 
         Back_button = Button(lf3, text="Back", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
