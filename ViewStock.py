@@ -45,39 +45,41 @@ class AllBookClass():
                                        font = ("Times%New%Roman" , 15 , "bold") )
         Book_name_entry.place( x = 40 , y = 40 )
 
-        '''Button
-           ******'''
-        List_All_books_button = Button( lf1 , text = "All books" , bg = '#4dff4d' ,
-                                     font = ("Times%New%Roman" , 17 , "bold") ,
-                                     relief = "groove", command = All_books)
-        List_All_books_button.place( x = 150 , y = 30)
-
-        Search_for_book_button = Button( lf2 , text = "Search" , bg = '#4dff4d' ,
-                                        font = ("Times%New%Roman" , 17 , "bold") ,
-                                        relief = "groove" , command = search_for_book)
-        Search_for_book_button.place( x = 340 , y = 30 )
-
-        Back_button = Button( lf3 , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
-                              relief = "groove"
-                              , command = self.root.destroy )
-        Back_button.place( x = 790 , y = 300 )
-
         '''
         Scroll Bar
         *********
         '''
         scroll_Bar = Scrollbar( lf3 , width = 25 , relief = "solid" )
-        scroll_Bar.place( x = 654 , y = 10 , height = 340 )
+        scroll_Bar.place( x = 834 , y = 10 , height = 288 )
 
-        '''
-                Text Field
-                **********
-        '''
-        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid" , wrap= WORD, selectbackground = "#bcdebb",yscrollcommand =  scroll_Bar.set)
-        Book_Details.place( x = 10 , y = 10 )
+        Details = "          Code" + "                       Member Name" + "                     age" \
+                  + "                         Vali: Year" + "                     Telephone NO:"
+        dash = "          *******" + "                       ******************" + "                  ********" \
+               + "                       ***********" + "                      ******************"
+        Book_Detail = Listbox(lf3, width=90, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
+                              font=("Times%New%Roman", 12, "bold italic"))
+        Book_Detail.place(x=20, y=10)
+        Book_Detail.insert(0, Details)
+        Book_Detail.insert(1, dash)
 
-        scroll_Bar.config( command = Book_Details.yview )
+        scroll_Bar.config( command = Book_Detail.yview )
 
+        '''Button
+                   ******'''
+        List_All_books_button = Button(lf1, text="All books", bg='#4dff4d',
+                                       font=("Times%New%Roman", 17, "bold"),
+                                       relief="groove", command=All_books)
+        List_All_books_button.place(x=150, y=30)
+
+        Search_for_book_button = Button(lf2, text="Search", bg='#4dff4d',
+                                        font=("Times%New%Roman", 17, "bold"),
+                                        relief="groove", command=search_for_book)
+        Search_for_book_button.place(x=340, y=30)
+
+        Back_button = Button(lf3, text="Back", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
+                             relief="groove"
+                             , command=self.root.destroy)
+        Back_button.place(x=790, y=310)
 
     def AllBookFunc(self):
         self.root.mainloop()
