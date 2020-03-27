@@ -43,7 +43,15 @@ class ListBookIssueClass():
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def All_issue_books():
-            pass
+            Book_Detail.delete(2, END)
+            con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+            cursor = con.cursor()
+            cursor.execute("select *  from Issue_book")
+            rows = cursor.fetchall()
+            for row in rows:
+                insertdata = "               " + str(row[0]) + '                                               ' + str(row[1])
+                Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+            con.close()
 
         '''Entries
           ********'''
