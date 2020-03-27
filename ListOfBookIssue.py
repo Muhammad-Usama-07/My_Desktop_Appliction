@@ -43,6 +43,25 @@ class ListBookIssueClass():
                                        font = ("Times%New%Roman" , 15 , "bold") )
         Book_name_entry.place( x = 40 , y = 40 )
 
+        '''
+                Scroll Bar
+                *********
+                '''
+        scroll_Bar = Scrollbar(lf3, width=25, relief="solid")
+        scroll_Bar.place(x=834, y=10, height=288)
+
+        Details = "          Code" + "                       Member Name" + "                     age" \
+                  + "                         Vali: Year" + "                     Telephone NO:"
+        dash = "          *******" + "                       ******************" + "                  ********" \
+               + "                       ***********" + "                      ******************"
+        Book_Detail = Listbox(lf3, width=90, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
+                              font=("Times%New%Roman", 12, "bold italic"))
+        Book_Detail.place(x=20, y=10)
+        Book_Detail.insert(0, Details)
+        Book_Detail.insert(1, dash)
+
+        scroll_Bar.config(command=Book_Detail.yview)
+
         '''Button
            ******'''
         List_All_books_button = Button( lf1 , text = "All books" , bg = '#4dff4d' ,
@@ -55,34 +74,18 @@ class ListBookIssueClass():
                                         relief = "groove" )
         Search_for_book_button.place( x = 340 , y = 30 )
 
-        Back_button = Button( lf3 , text = "Back" , bg = '#4dff4d' , font = ("Times%New%Roman" , 17 , "bold") ,
-                              relief = "groove"
-                              , command = self.root.destroy )
-        Back_button.place( x = 790 , y = 300 )
+        Back_button = Button(lf3, text="Back", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
+                             relief="groove"
+                             , command=self.root.destroy)
+        Back_button.place(x=790, y=310)
 
-        '''
-        Text Field
-        **********
-        '''
 
-        '''
-        Scroll Bar
-        *********
-        '''
-        scroll_Bar = Scrollbar( lf3 , width = 25 , relief = "solid" )
-        scroll_Bar.place( x = 654 , y = 10 , height = 340 )
-
-        Book_Details = Text( lf3 , width = 80 , height = 21 , relief = "solid", wrap= WORD, selectbackground = "#bcdebb" ,yscrollcommand =  scroll_Bar.set)
-        Book_Details.place( x = 10 , y = 10 )
-
-        scroll_Bar.config( command = Book_Details.yview )
 
     def ListBookIssueFunc(self):
         self.root.mainloop()
 
 
 
-'''
 r = Tk()
 obj = ListBookIssueClass()
-r.mainloop()'''
+r.mainloop()
