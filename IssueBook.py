@@ -20,11 +20,24 @@ class IssueBookClass():
         ''' Functions
             *********'''
         def CheckBook():
-            pass
+            bi = Book_ISBN_entry.get()
+            if (bi == 0):
+                messagebox.showerror("Warning", "Please Enter ISBN at least")
+            else:
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("select *  from Book where ISBN='" + bi + "'")
+                rows = cursor.fetchall()
+                for row in rows:
+                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
+                                 '                           ' + row[2] + '                         ' + row[3] + \
+                                 '                                    ' + str(row[4])
+                    Detail.insert(Detail.size() + 1, insertdata)
+                con.close()
         def CheckMemebr():
             mc = Member_code_entry.get()
             if (mc == 0):
-                messagebox.showerror("Warning", "Please Enter ISBN at least")
+                messagebox.showerror("Warning", "Please Enter Code of member at least")
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
