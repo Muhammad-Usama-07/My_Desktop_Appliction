@@ -16,11 +16,17 @@ class IssueBookClass():
                          relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550 )
         lf.pack( fill = "both" , expand = True , padx = 20 , pady = 20 )
 
-        # Functions
-        # ***********
+        ''' Functions
+            *********'''
+        def CheckBook():
+            pass
+        def CheckMemebr():
+            pass
 
         def BookIssued():
-            if (Book_ISBN_var.get() == 0 and Member_code_var.get() == 0):
+            bi = Book_ISBN_var.get()
+            mc = Member_code_var.get()
+            if (bi == 0 and mc == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN and code of member" )
             else:
                 pass
@@ -66,6 +72,16 @@ class IssueBookClass():
         Detail.insert(1, dash)
 
         scroll_Bar.config(command=Detail.yview)
+
+        '''Buttons
+           *******'''
+        check_button = Button(lf, text="Check Book", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+                                    relief="groove", command=CheckBook)
+        check_button.place(x = 550 , y = 10)
+
+        check_member = Button(lf, text="Check Member", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+                              relief="groove", command=CheckMemebr)
+        check_member.place(x=550, y=65)
 
         Book_Issued_button = Button( lf , text = "Issue this Book" , bg = '#4dff4d' , font = ("Times%New%Roman" , 20 , "bold") ,
                                   relief = "groove", command = BookIssued )
