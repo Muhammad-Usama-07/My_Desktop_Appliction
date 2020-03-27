@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector as mysql
 class ListBookIssueClass():
     def __init__(self):
         self.root = Tk()
@@ -29,10 +30,20 @@ class ListBookIssueClass():
         '''Functions
           ***********'''
         def search_for_book():
-            if (Book_name.get() == ""):
-                messagebox.showerror( "Warning" , "Please enter ISBN of the book" )
+            sb = Book_name_entry.get()
+            if (sb == 0):
+                messagebox.showerror("Warning", "Please Enter ISBN at least")
             else:
-                pass
+                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+                cursor = con.cursor()
+                cursor.execute("select *  from Book where ISBN='" + sb + "'")
+                rows = cursor.fetchall()
+                for row in rows:
+                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
+                                 '                           ' + row[2] + '                         ' + row[3] + \
+                                 '                                    ' + str(row[4])
+                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                con.close()
         def All_books():
             pass
 
@@ -71,7 +82,7 @@ class ListBookIssueClass():
 
         Search_for_book_button = Button( lf2 , text = "Search" , bg = '#4dff4d' ,
                                         font = ("Times%New%Roman" , 17 , "bold") ,
-                                        relief = "groove" )
+                                        relief = "groove", command = search_for_book )
         Search_for_book_button.place( x = 340 , y = 30 )
 
         Back_button = Button(lf3, text="Back", bg='#4dff4d', font=("Times%New%Roman", 17, "bold"),
