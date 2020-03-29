@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
 import mysql.connector as mysql
 class AllBookClass():
 
@@ -32,7 +33,9 @@ class AllBookClass():
           ***********'''
 
         def search_for_book():
-            Book_Detail.delete(2, END)
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -42,27 +45,19 @@ class AllBookClass():
                 cursor.execute("select *  from Book where ISBN='" + sb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
-                                 '                           ' + row[2] + '                         ' + row[3] + \
-                                 '                                    ' + str(row[4])
-                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                    tv.insert('',END, values=row)
                 con.close()
         def All_books():
-            Book_Detail.delete(2,END)
-            sb = Book_name_entry.get()
-            if (sb == 0):
-                messagebox.showerror("Warning", "Please Enter ISBN at least")
-            else:
-                con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
-                cursor = con.cursor()
-                cursor.execute("select *  from Book ")
-                rows = cursor.fetchall()
-                for row in rows:
-                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
-                                 '                           ' + row[2] + '                         ' + row[3] + \
-                                 '                                    ' + str(row[4])
-                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
-                con.close()
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
+            con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
+            cursor = con.cursor()
+            cursor.execute("select *  from Book ")
+            rows = cursor.fetchall()
+            for row in rows:
+                tv.insert('', END, values=row)
+            con.close()
         '''Entries
           ********'''
         Book_name_entry = Entry( lf2 , width = 25 , relief = "solid" ,
@@ -76,17 +71,18 @@ class AllBookClass():
         scroll_Bar = Scrollbar( lf3 , width = 25 , relief = "solid" )
         scroll_Bar.place( x = 834 , y = 10 , height = 288 )
 
-        Details = "          Code" + "                       Member Name" + "                     age" \
-                  + "                         Vali: Year" + "                     Telephone NO:"
-        dash = "          *******" + "                       ******************" + "                  ********" \
-               + "                       ***********" + "                      ******************"
-        Book_Detail = Listbox(lf3, width=90, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
-                              font=("Times%New%Roman", 12, "bold italic"))
-        Book_Detail.place(x=20, y=10)
-        Book_Detail.insert(0, Details)
-        Book_Detail.insert(1, dash)
+        tv = ttk.Treeview(lf3, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
+        tv.pack(pady=10, ipadx=60, ipady=30)
+        tv.heading(1, text='ISBN')
+        tv.column(1, width=90)
+        tv.heading(2, text='Book Name')
+        tv.heading(3, text='Book auther')
+        tv.heading(4, text='Book Edition')
+        tv.column(4, width=100)
+        tv.heading(5, text='Book Quantity')
+        tv.column(5, width=100)
 
-        scroll_Bar.config( command = Book_Detail.yview )
+        scroll_Bar.config(command=tv.yview)
 
         '''Button
                    ******'''
