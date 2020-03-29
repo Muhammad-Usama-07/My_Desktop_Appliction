@@ -64,8 +64,12 @@ class ListBookIssueClass():
         scroll_Bar = Scrollbar(lf3, width=25, relief="solid")
         scroll_Bar.place(x=608, y=10, height=288)
 
-        tv = ttk.Treeview(lf3, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
+        tv = ttk.Treeview(lf3, column=(1, 2), show='headings', yscrollcommand=scroll_Bar.set)
         tv.pack(pady=10, ipadx=60, ipady=30)
+        tv.heading(1, text="Member's Code")
+        tv.column(1, width=90)
+        tv.heading(2, text='Book ISBN')
+        tv.column(2, width=90)
         scroll_Bar.config(command=tv.yview)
 
         '''Button
