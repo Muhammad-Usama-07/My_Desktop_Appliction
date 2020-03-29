@@ -31,6 +31,9 @@ class ListBookIssueClass():
         '''Functions
           ***********'''
         def search_for_issue_book():
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -40,15 +43,19 @@ class ListBookIssueClass():
                 cursor.execute("select *  from Issue_book where Cm='" + sb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    pass
+                    tv.insert('',END, values=row)
                 con.close()
         def All_issue_books():
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
+            sb = Book_name_entry.get()
             con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
             cursor = con.cursor()
             cursor.execute("select *  from Issue_book")
             rows = cursor.fetchall()
             for row in rows:
-                pass
+                tv.insert('',END, values=row)
             con.close()
 
         '''Entries
