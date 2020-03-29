@@ -69,7 +69,7 @@ class AllBookClass():
         *********
         '''
         scroll_Bar = Scrollbar( lf3 , width = 25 , relief = "solid" )
-        scroll_Bar.place( x = 834 , y = 10 , height = 288 )
+        scroll_Bar.place( x = 849 , y = 10 , height = 288 )
 
         tv = ttk.Treeview(lf3, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
         tv.pack(pady=10, ipadx=60, ipady=30)
@@ -107,7 +107,7 @@ class AllBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 
 AllBookClass()
-r.mainloop()
+r.mainloop()'''

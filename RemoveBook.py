@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from Library_Management_project import AddBook
+from tkinter import ttk
 import mysql.connector as mysql
 class RemoveBookClass():
     def __init__(self):
@@ -21,6 +21,9 @@ class RemoveBookClass():
         # Functions
         # ***********
         def Search():
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
             rb = Remove_book_ISBN_entry.get()
             if (rb == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN at least" )
@@ -30,14 +33,14 @@ class RemoveBookClass():
                 cursor.execute("select *  from Book where ISBN='" + rb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "             " + str(row[0]) + '                                ' + row[1] + \
-                                 '                           ' + row[2] + '                         ' + row[3] + \
-                                 '                                    ' + str(row[4])
-                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                    tv.insert('',END, values=row)
                 con.close()
 
 
         def BookRemoved():
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
             rb = Remove_book_ISBN_entry.get()
             if (rb == 0):
                 messagebox.showerror( "Warning" , "Please Enter ISBN at least" )
@@ -47,7 +50,6 @@ class RemoveBookClass():
                 cursor.execute("delete from Book where ISBN='" + rb + "'")
                 cursor.execute("commit")
                 Remove_book_ISBN_entry.delete(0, 'end')
-                Book_Detail.delete(2, END)
                 messagebox.showinfo("Delete status", " Data Deleted successfully")
                 con.close()
 
@@ -67,16 +69,19 @@ class RemoveBookClass():
         #Creating ScrollBar
 
         scroll_Bar = Scrollbar(lf, width = 25, relief = "solid")
-        scroll_Bar.place(x = 789, y = 80, height = 250)
-        Details = "          ISBN"+ "                         Book Name"+"                         Auther"\
-                  +"                         Edition"+"                         Quantity"
-        dash = "          *****"+ "                            *************"+"                          ********"\
-                  +"                           ********"+"                          **********"
-        Book_Detail = Listbox(lf, width = 85, height = 13, relief = "solid" ,yscrollcommand =  scroll_Bar.set,font = ("Times%New%Roman" , 12 , "bold italic"))
-        Book_Detail.place(x = 20, y = 80)
-        Book_Detail.insert(0, Details)
-        Book_Detail.insert(1, dash)
-        scroll_Bar.config( command = Book_Detail.yview )
+        scroll_Bar.place(x = 814, y = 80, height = 286)
+        tv = ttk.Treeview(lf, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
+        tv.pack(padx=10, pady=80, ipadx=40, ipady=30)
+        tv.heading(1, text='ISBN')
+        tv.column(1, width=90)
+        tv.heading(2, text='Book Name')
+        tv.heading(3, text='Book auther')
+        tv.heading(4, text='Book Edition')
+        tv.column(4, width=100)
+        tv.heading(5, text='Book Quantity')
+        tv.column(5, width=100)
+
+        scroll_Bar.config(command=tv.yview)
 
         '''Buttons
            ********'''
