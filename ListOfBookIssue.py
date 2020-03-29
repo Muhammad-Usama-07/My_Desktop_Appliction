@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
 import mysql.connector as mysql
 class ListBookIssueClass():
     def __init__(self):
@@ -30,7 +31,6 @@ class ListBookIssueClass():
         '''Functions
           ***********'''
         def search_for_issue_book():
-            Book_Detail.delete(2, END)
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -44,7 +44,6 @@ class ListBookIssueClass():
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def All_issue_books():
-            Book_Detail.delete(2, END)
             con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
             cursor = con.cursor()
             cursor.execute("select *  from Issue_book")
@@ -67,13 +66,7 @@ class ListBookIssueClass():
         scroll_Bar = Scrollbar(lf3, width=25, relief="solid")
         scroll_Bar.place(x=608, y=10, height=288)
 
-        Details = "          Member Code" + "                       Book Code"
-        dash = "          *****************" + "                       **************"
-        Book_Detail = Listbox(lf3, width=45, height=15, relief="solid", yscrollcommand=scroll_Bar.set,
-                              font=("Times%New%Roman", 12, "bold italic"))
-        Book_Detail.place(x=200, y=10)
-        Book_Detail.insert(0, Details)
-        Book_Detail.insert(1, dash)
+        tv = ttk.Treeview(lf3, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
 
         scroll_Bar.config(command=Book_Detail.yview)
 
@@ -101,6 +94,6 @@ class ListBookIssueClass():
 
 
 
-'''r = Tk()
+r = Tk()
 obj = ListBookIssueClass()
-r.mainloop()'''
+r.mainloop()
