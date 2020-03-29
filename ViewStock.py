@@ -32,6 +32,7 @@ class AllBookClass():
           ***********'''
 
         def search_for_book():
+            Book_Detail.delete(2, END)
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -47,6 +48,7 @@ class AllBookClass():
                     Book_Detail.insert(Book_Detail.size() + 1, insertdata)
                 con.close()
         def All_books():
+            Book_Detail.delete(2,END)
             sb = Book_name_entry.get()
             if (sb == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -109,7 +111,7 @@ class AllBookClass():
 
 
 
-r = Tk()
+'''r = Tk()
 
 AllBookClass()
-r.mainloop()
+r.mainloop()'''
