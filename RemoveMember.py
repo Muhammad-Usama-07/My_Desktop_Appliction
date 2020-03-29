@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
 import mysql.connector as mysql
 class RemoveMemberClass():
     def __init__(self):
@@ -20,21 +21,24 @@ class RemoveMemberClass():
         # Functions
         # ***********
         def Search():
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
             rmm = Remove_Members_entry.get()
             if (rmm == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
             else:
                 con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
                 cursor = con.cursor()
-                cursor.execute("select *  from Book where ISBN='" + rmm + "'")
+                cursor.execute("select *  from members where Code='" + rmm + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "            " + str(row[0]) + '                           ' + row[1] + \
-                                 '                                   ' + row[2] + '                                ' + row[3] + \
-                                 '                                ' + str(row[4])
-                    Members_Detail.insert(Members_Detail.size() + 1, insertdata)
+                    tv.insert('', END, values=row)
                 con.close()
         def MembersRemoved():
+            a = tv.get_children()
+            for child in a:
+                tv.delete(child)
             rm = Remove_Members_entry.get()
             if (rm == 0):
                 messagebox.showerror("Warning", "Please Enter ISBN at least")
@@ -64,17 +68,20 @@ class RemoveMemberClass():
         #Creating ScrollBar
 
         scroll_Bar = Scrollbar(lf, width = 25, relief = "solid")
-        scroll_Bar.place(x = 789, y = 80, height = 250)
-        Details = "          Code" + "                       Member Name" + "                     age" \
-                  + "                         Vali: Year" + "                     Telephone NO:"
-        dash = "          *******" + "                       ******************" + "                  ********" \
-               + "                       ***********" + "                      ******************"
-        Members_Detail = Listbox(lf, width=85, height=13, relief="solid", yscrollcommand=scroll_Bar.set,
-                              font=("Times%New%Roman", 12, "bold italic"))
-        Members_Detail.place(x=20, y=80)
-        Members_Detail.insert(0, Details)
-        Members_Detail.insert(1, dash)
-        scroll_Bar.config( command = Members_Detail.yview )
+        scroll_Bar.place(x = 754, y = 80, height = 286)
+        tv = ttk.Treeview(lf, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
+        tv.pack(padx=10,pady=80, ipadx=40, ipady=30)
+        tv.heading(1, text='Code')
+        tv.column(1, width=70)
+        tv.heading(2, text='Member Name')
+        tv.heading(3, text='age')
+        tv.column(3, width=100)
+        tv.heading(4, text='Validation Year')
+        tv.column(4, width=100)
+        tv.heading(5, text='Telephone number')
+        tv.column(5, width=100)
+
+        scroll_Bar.config(command=tv.yview)
 
         '''Buttons
            ********'''
