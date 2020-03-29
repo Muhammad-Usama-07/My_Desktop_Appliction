@@ -40,8 +40,7 @@ class ListBookIssueClass():
                 cursor.execute("select *  from Issue_book where Cm='" + sb + "'")
                 rows = cursor.fetchall()
                 for row in rows:
-                    insertdata = "               " + str(row[0]) + '                                               ' + str(row[1])
-                    Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                    pass
                 con.close()
         def All_issue_books():
             con = mysql.connect(host="localhost", user="root", password="", database="lib_db")
@@ -49,8 +48,7 @@ class ListBookIssueClass():
             cursor.execute("select *  from Issue_book")
             rows = cursor.fetchall()
             for row in rows:
-                insertdata = "               " + str(row[0]) + '                                               ' + str(row[1])
-                Book_Detail.insert(Book_Detail.size() + 1, insertdata)
+                pass
             con.close()
 
         '''Entries
@@ -67,8 +65,8 @@ class ListBookIssueClass():
         scroll_Bar.place(x=608, y=10, height=288)
 
         tv = ttk.Treeview(lf3, column=(1, 2, 3, 4, 5), show='headings', yscrollcommand=scroll_Bar.set)
-
-        scroll_Bar.config(command=Book_Detail.yview)
+        tv.pack(pady=10, ipadx=60, ipady=30)
+        scroll_Bar.config(command=tv.yview)
 
         '''Button
            ******'''
