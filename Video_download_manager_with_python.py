@@ -13,12 +13,12 @@ root.title('Video Download Manager ')
 root.geometry("900x350+300+50")
 root.minsize(400, 200)
 root.maxsize(1100, 700)
-root.configure(bg='#bcdebb')
-Label(root, text=" Welcome to my Video Downloader", bg="#66bd6d",
+root.configure(bg='#0F5CD6')
+Label(root, text=" Welcome to my Video Downloader", bg="#6A91CF",
       relief="solid",
       anchor="w", height=2, font="Times%New%Roman 11 bold italic").pack(fill=X)
 
-lf = LabelFrame(root, text="Whatr you want", fg="red", bg='#33ff9e',
+lf = LabelFrame(root, text="Download Panel", fg="red", bg='#6A91CF',
                 relief="solid", font="Times%New%Roman 16 bold", height=370)
 lf.pack(fill="both", padx=20, pady=20)
 
@@ -58,11 +58,11 @@ def save_path():
 
 # Labels
 
-link_address_Label = Label(lf, text="Link Address: ", bg="#33ff9e",
+link_address_Label = Label(lf, text="Link Address: ", bg="#6A91CF",
                            anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
 link_address_Label.place(x=20, y=20)
 
-Quality_Label = Label(lf, text="your Location: ", bg="#33ff9e",
+Quality_Label = Label(lf, text="your Location: ", bg="#6A91CF",
                       anchor="w", height=2, font=("Times%New%Roman", 12, "bold italic"))
 Quality_Label.place(x=20, y=70)
 
@@ -89,11 +89,11 @@ progbar.place(x = 30, y = 240)'''
 
 '''Button
   ******** '''
-save_button = Button(lf, text="Select Location", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+save_button = Button(lf, text="Select Location", bg='#0F5CD6', font=("Times%New%Roman", 15, "bold"),
                      relief="groove", command=save_path)
 save_button.place(x=660, y=75)
 
-download_button = Button(lf, text="Download", bg='#4dff4d', font=("Times%New%Roman", 15, "bold"),
+download_button = Button(lf, text="Download", bg='#0F5CD6', font=("Times%New%Roman", 15, "bold"),
                          relief="groove", command = download)
 download_button.place(x=300, y=130)
 
