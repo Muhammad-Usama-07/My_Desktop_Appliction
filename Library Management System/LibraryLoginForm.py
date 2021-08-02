@@ -3,6 +3,10 @@
 
 from tkinter import *
 from tkinter import messagebox
+
+import PIL
+from PIL import ImageTk
+
 import MenuPage
 
 # Creating Function for login button.
@@ -42,7 +46,12 @@ lf1 = LabelFrame( r , text = "Login Your Account" , fg = "red" , bg = '#33ff9e' 
                   relief = "solid" , font = "Times%New%Roman 16 bold" , height = 550)
 lf1.pack( fill = "both" , expand = TRUE , padx = 20 , pady = 20 )
 
+# image
 
+image = PIL.Image.open(r"Inventoryicon.png")
+img = ImageTk.PhotoImage(image)
+l = Label(image=img, bg='#33ff9e')
+l.place(relx=0.5, rely=0.3, anchor=CENTER)
 # Creating Label in a frame
 
 lbl = Label(lf1 , text = "User Name:" , bg = '#33ff9e' , font = ("Times%New%Roman" , 15 , "italic" , "bold") )
