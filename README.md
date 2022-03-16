@@ -3,3 +3,7 @@
 ## Project 01
 
 Library Management Systrm
+
+## Project 02
+
+Inventory Management 
