@@ -1,4 +1,4 @@
-# This Repository Contains all my ptojects made up with python programming
+# This Repository Contains all my projects that made up with python programming
 
 ## Project 01
 
