@@ -6,7 +6,6 @@
 
 ## Project 02
 
-Inventory Management 
 #### [Inventry Management System](https://github.com/Muhammad-Usama-07/My_Desktop_Appliction/tree/master/InventryManagementSystem)
 
 ## Project 03
